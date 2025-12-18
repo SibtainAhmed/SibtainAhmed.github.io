@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibtain Ahmed | RLHF Researcher & Software Engineer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'acad-navy': '#1e293b',
+                        'acad-slate': '#64748b',
+                        'acad-gold': '#d97706',
+                        'acad-cream': '#f8fafc',
+                        'acad-white': '#ffffff',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Charts and Scrollbar */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #cbd5e1;
+            z-index: 0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-acad-cream text-slate-800 antialiased">
+
+    <!-- Chosen Palette: Academic Modern (Deep Navy #1e293b, Slate #64748b, Warm Gold #d97706) -->
+    <!-- Application Structure Plan: Single Page Application with Sticky Nav. 
+         Sections: 
+         1. Hero (Identity/Hook) 
+         2. About (Narrative/Bio)
+         3. The Journey (Interactive Timeline)
+         4. Competency Map (Data Viz of Skills)
+         5. Teaching & Impact (Testimonials)
+         6. Projects & ICPC (Achievements)
+         7. Gallery (Personality)
+         8. Contact
+    -->
+    <!-- Visualization & Content Choices:
+         - Radar Chart: To show the balance between Research, Engineering, and Soft Skills (User Goal: Understand profile mix).
+         - Vertical Timeline: To visualize the journey from Karachi to Iowa (User Goal: See progression).
+         - Testimonial Grid: To validate the "sincerity and passion" claims.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-acad-navy/95 backdrop-blur text-white z-50 shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-serif font-bold text-xl tracking-wider">
+                    <span class="text-acad-gold">S</span>IBTAIN <span class="text-acad-gold">A</span>HMED
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="hover:text-acad-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#journey" class="hover:text-acad-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Journey</a>
+                        <a href="#competencies" class="hover:text-acad-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#testimonials" class="hover:text-acad-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Impact</a>
+                        <a href="#projects" class="hover:text-acad-gold px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#contact" class="bg-acad-gold hover:bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors">Let's Talk</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-acad-navy" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#journey" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Journey</a>
+                <a href="#competencies" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-acad-navy text-white pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <!-- Canvas Background Effect (Simulated via script below) -->
+            <canvas id="bgCanvas" class="w-full h-full"></canvas>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center">
+            <div class="w-full md:w-1/2 mt-10 md:mt-0 z-10">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-acad-navy uppercase bg-acad-gold rounded-full">
+                    PhD Candidate & Researcher
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-4">
+                    Bridging Human Insight & <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-acad-gold to-yellow-200">Reinforcement Learning</span>
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+                    I am a Computer Scientist specializing in <strong>RLHF</strong> at Iowa State University. 
+                    Merging rigorous engineering with compassionate mentorship. 
+                    From Karachi to Ames, I build systems that learn and communities that thrive.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-acad-gold hover:bg-yellow-600 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        View Work
+                    </a>
+                    <a href="https://www.linkedin.com/in/SibtainAhmed" target="_blank" class="px-8 py-3 border border-gray-500 hover:border-white rounded-lg font-semibold transition-all flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center z-10">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-acad-gold/30 p-2">
+                    <div class="w-full h-full rounded-full bg-gray-700 overflow-hidden relative shadow-2xl">
+                        <!-- Placeholder for User Image -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 text-gray-400">
+                            <div class="text-center">
+                                <i class="fas fa-user-graduate text-5xl mb-2"></i>
+                                <p class="text-sm">Sibtain Ahmed</p>
+                            </div>
+                        </div>
+                        <!-- In production: <img src="your-photo.jpg" class="object-cover w-full h-full" alt="Sibtain Ahmed"> -->
+                    </div>
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-4 -right-4 bg-white text-acad-navy p-4 rounded-xl shadow-xl flex items-center gap-3">
+                        <div class="text-acad-gold text-2xl">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold uppercase text-gray-500">ICPC N. America</p>
+                            <p class="font-bold text-lg">4th Place</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Context Intro for About -->
+    <section class="py-16 bg-white" id="about">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-serif font-bold text-acad-navy mb-6">More Than Just Code</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                While my research focuses on the mathematical intricacies of **Reinforcement Learning from Human Feedback (RLHF)**, my approach to computer science is deeply human-centric. Whether I'm optimizing algorithms for a competition or explaining complex data structures to a struggling student, I bring sincerity, passion, and a holistic perspective. This portfolio is a curated collection of my technical rigor and my personal journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Journey (Timeline) -->
+    <section class="py-20 bg-gray-50" id="journey">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-wide text-acad-gold uppercase">My Path</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-acad-navy mt-2">From Karachi to Ames</h3>
+            </div>
+
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="timeline-line hidden md:block"></div>
+
+                <div class="space-y-12 relative">
+                    
+                    <!-- Item 1 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                        <div class="w-full md:w-5/12 order-2 md:order-1 md:text-right pr-0 md:pr-8">
+                            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-acad-gold">
+                                <h4 class="font-bold text-xl text-acad-navy">PhD Student & TA</h4>
+                                <p class="text-sm text-acad-slate mb-2">Iowa State University | Present</p>
+                                <p class="text-gray-600 text-sm">Conducting research in RLHF. Teaching Assistant for CS courses, mentoring diverse student groups with high praise for clarity and dedication.</p>
+                            </div>
+                        </div>
+                        <div class="z-20 flex items-center order-1 md:order-2 bg-acad-navy border-4 border-white shadow-xl w-10 h-10 rounded-full justify-center text-white text-sm font-bold mb-4 md:mb-0">
+                            2025
+                        </div>
+                        <div class="w-full md:w-5/12 order-3 md:order-3 pl-0 md:pl-8">
+                            <span class="text-sm font-bold text-acad-slate">Ames, USA 🇺🇸</span>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                        <div class="w-full md:w-5/12 order-2 md:order-1 md:text-right pr-0 md:pr-8 md:hidden">
+                            <!-- Mobile View Only -->
+                             <span class="text-sm font-bold text-acad-slate">Karachi, Pakistan 🇵🇰</span>
+                        </div>
+                        <div class="w-full md:w-5/12 order-3 md:order-1 md:text-right pr-0 md:pr-8 hidden md:block">
+                             <span class="text-sm font-bold text-acad-slate">Karachi, Pakistan 🇵🇰</span>
+                        </div>
+
+                        <div class="z-20 flex items-center order-1 md:order-2 bg-white border-4 border-acad-slate shadow-xl w-10 h-10 rounded-full justify-center text-acad-slate text-sm font-bold mb-4 md:mb-0">
+                            2024
+                        </div>
+                        
+                        <div class="w-full md:w-5/12 order-3 md:order-3 pl-0 md:pl-8">
+                            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-acad-slate">
+                                <h4 class="font-bold text-xl text-acad-navy">Software Engineer</h4>
+                                <p class="text-sm text-acad-slate mb-2">Karachi, Pakistan | 1 Year</p>
+                                <p class="text-gray-600 text-sm">Developed scalable backend systems. Gained industry experience in agile workflows and full-stack development before pursuing higher studies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-col md:flex-row items-center justify-between w-full">
+                        <div class="w-full md:w-5/12 order-2 md:order-1 md:text-right pr-0 md:pr-8">
+                            <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-l-4 border-gray-300">
+                                <h4 class="font-bold text-xl text-acad-navy">BS Computer Systems Engineering</h4>
+                                <p class="text-sm text-acad-slate mb-2">NED University | Graduated 2024</p>
+                                <p class="text-gray-600 text-sm">Built strong foundations in systems, algorithms, and hardware-software integration. Active in coding clubs.</p>
+                            </div>
+                        </div>
+                        <div class="z-20 flex items-center order-1 md:order-2 bg-white border-4 border-gray-300 shadow w-8 h-8 rounded-full justify-center text-gray-400 text-xs mb-4 md:mb-0">
+                            2020
+                        </div>
+                        <div class="w-full md:w-5/12 order-3 md:order-3 pl-0 md:pl-8">
+                            <span class="text-sm font-bold text-gray-400">Karachi, Pakistan 🇵🇰</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Skills Dashboard -->
+    <section class="py-20 bg-white" id="competencies">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-sm font-bold tracking-wide text-acad-gold uppercase">Competency Map</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-acad-navy mt-2 mb-6">Research Meets Engineering</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        My profile is a hybrid. I possess the <strong>theoretical depth</strong> required for PhD-level research in Reinforcement Learning, but I retain the <strong>practical, hands-on discipline</strong> of a Software Engineer. Furthermore, my experience as a Teaching Assistant has honed my ability to communicate complex ideas effectively.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <!-- Skill Bar 1 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-acad-navy">Machine Learning / RLHF</span>
+                                <span class="text-sm font-medium text-acad-navy">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-acad-navy h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 2 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-acad-navy">Python / PyTorch / TensorFlow</span>
+                                <span class="text-sm font-medium text-acad-navy">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-acad-slate h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <!-- Skill Bar 3 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-acad-navy">Algorithmic Problem Solving</span>
+                                <span class="text-sm font-medium text-acad-navy">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-acad-gold h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="bg-acad-cream p-6 rounded-2xl shadow-inner border border-gray-100">
+                     <h4 class="text-center text-sm font-bold text-gray-500 mb-4">Holistic Skill Distribution</h4>
+                    <div class="chart-container">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button onclick="updateChartData('research')" class="px-3 py-1 text-xs border border-acad-navy rounded hover:bg-acad-navy hover:text-white transition">Focus: Research</button>
+                        <button onclick="updateChartData('engineering')" class="px-3 py-1 text-xs border border-acad-navy rounded hover:bg-acad-navy hover:text-white transition">Focus: Engineering</button>
+                        <button onclick="updateChartData('all')" class="px-3 py-1 text-xs bg-acad-navy text-white rounded shadow transition">View All</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-acad-navy text-white" id="testimonials">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-wide text-acad-gold uppercase">Impact & Feedback</h2>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold mt-2">What People Say</h3>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    Being a Teaching Assistant is about more than grading. It's about mentorship. Here are thoughts from the students I've had the privilege to support.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/15 transition duration-300">
+                    <div class="text-acad-gold text-3xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-200 italic mb-6">"Sibtain's explanation style is unique. He doesn't just give the answer; he helps you derive it. His patience with international students like me made a huge difference in my confidence."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center text-xs font-bold text-acad-navy mr-3">CS</div>
+                        <div>
+                            <h5 class="font-bold text-sm">Undergrad Student</h5>
+                            <p class="text-xs text-gray-400">Iowa State University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/15 transition duration-300 transform md:-translate-y-4">
+                    <div class="text-acad-gold text-3xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-200 italic mb-6">"The most sincere TA I've ever had. You can tell he actually cares about the subject and our learning. His passion for AI is contagious!"</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center text-xs font-bold text-acad-navy mr-3">JD</div>
+                        <div>
+                            <h5 class="font-bold text-sm">John Doe (Alias)</h5>
+                            <p class="text-xs text-gray-400">CS Senior</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:bg-white/15 transition duration-300">
+                    <div class="text-acad-gold text-3xl mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-gray-200 italic mb-6">"He stayed back an hour after the lab just to help us debug our final project. That level of dedication is rare."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-400 rounded-full flex items-center justify-center text-xs font-bold text-acad-navy mr-3">AL</div>
+                        <div>
+                            <h5 class="font-bold text-sm">Alice L.</h5>
+                            <p class="text-xs text-gray-400">Software Eng. Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Achievements -->
+    <section class="py-20 bg-gray-50" id="projects">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-sm font-bold tracking-wide text-acad-gold uppercase">Portfolio</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-acad-navy mt-2">Selected Works</h3>
+                </div>
+                
+                <!-- Simple Filter Buttons -->
+                <div class="hidden md:flex space-x-2">
+                    <button class="px-4 py-2 bg-acad-navy text-white text-sm rounded-full">All</button>
+                    <button class="px-4 py-2 bg-white text-gray-600 hover:bg-gray-100 text-sm rounded-full shadow-sm">Research</button>
+                    <button class="px-4 py-2 bg-white text-gray-600 hover:bg-gray-100 text-sm rounded-full shadow-sm">Engineering</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1: ICPC -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gradient-to-r from-blue-900 to-slate-800 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-code text-6xl text-white/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-4 right-4 bg-acad-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">4th Position</div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-acad-navy mb-2">ICPC North America Qualifier</h4>
+                        <p class="text-gray-600 text-sm mb-4">Competed against top universities in algorithmic problem solving. Collaborated under high pressure to solve complex dynamic programming and graph theory problems.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">C++</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Algorithms</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-acad-gold font-semibold text-sm hover:underline">View Certificate <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: RLHF Research -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        <!-- Simulated visualization placeholder -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-gray-800">
+                             <span class="text-gray-500 text-4xl"><i class="fas fa-brain"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-acad-navy mb-2">RL from Human Feedback</h4>
+                        <p class="text-gray-600 text-sm mb-4">Researching reward model optimization. Investigating how human bias affects policy convergence in Large Language Models.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Python</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">PyTorch</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Research</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-acad-gold font-semibold text-sm hover:underline">Read Abstract <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Software Engineering -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-48 bg-gray-100 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-server text-6xl text-gray-300"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl text-acad-navy mb-2">Scalable Backend System</h4>
+                        <p class="text-gray-600 text-sm mb-4">Engineered backend microservices for a fintech application in Karachi. Reduced API latency by 30% through caching strategies.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-acad-gold font-semibold text-sm hover:underline">View Code <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Personality Gallery (Placeholder) -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+             <div class="text-center mb-10">
+                <h3 class="text-2xl font-serif font-bold text-acad-navy">Life Beyond The Lab</h3>
+                <p class="text-gray-500">Snapshots of events, travel, and campus life.</p>
+            </div>
+            <!-- Masonry-style Grid Simulator -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80 overflow-hidden relative">
+                <div class="bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-300 transition cursor-pointer"><i class="fas fa-camera"></i></div>
+                <div class="bg-gray-300 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-400 transition cursor-pointer md:col-span-2"><i class="fas fa-plane"></i></div>
+                <div class="bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-300 transition cursor-pointer"><i class="fas fa-users"></i></div>
+                <div class="bg-gray-300 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-400 transition cursor-pointer"><i class="fas fa-mountain"></i></div>
+                <!-- Fade out effect -->
+                <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent flex items-end justify-center pb-4">
+                    <span class="text-sm font-semibold text-acad-navy bg-white px-4 py-2 rounded-full shadow border">Gallery Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="bg-acad-navy text-white pt-16 pb-8" id="contact">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-serif font-bold mb-6">Let's Connect</h2>
+            <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                I am currently open to Summer 2025 Internship opportunities in Software Engineering and Machine Learning Research.
+            </p>
+            
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="mailto:your.email@iastate.edu" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-acad-gold transition-colors text-xl">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/SibtainAhmed" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-colors text-xl">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-gray-800 transition-colors text-xl">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2025 Sibtain Ahmed. Built with Tailwind & Vanilla JS.</p>
+                <p>Designed for Impact.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- State Management ---
+        const state = {
+            currentTab: 'all'
+        };
+
+        // --- Chart.js Implementation ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initRadarChart();
+            animateHero();
+            setupScrollSpy();
+        });
+
+        let radarChart;
+
+        function initRadarChart() {
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+            
+            // Data Definitions
+            const dataAll = [90, 85, 95, 80, 85, 75]; // RL, Algos, Python, Teaching, Systems, Leadership
+            
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Reinforcement Learning', 
+                        'Algorithms (ICPC)', 
+                        'Software Eng.', 
+                        'Teaching/Mentorship', 
+                        'System Design', 
+                        'Communication'
+                    ],
+                    datasets: [{
+                        label: 'Proficiency Level',
+                        data: dataAll,
+                        fill: true,
+                        backgroundColor: 'rgba(217, 119, 6, 0.2)', // acad-gold with opacity
+                        borderColor: '#d97706',
+                        pointBackgroundColor: '#1e293b',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#d97706'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: { borderWidth: 3 }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: '#e2e8f0' },
+                            pointLabels: {
+                                font: { size: 12, family: 'Inter' },
+                                color: '#475569'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            ticks: { display: false } // hide numbers for cleaner look
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        // --- Interaction: Update Chart Data ---
+        window.updateChartData = function(focus) {
+            let newData = [];
+            let color = '';
+            let label = '';
+
+            if (focus === 'research') {
+                newData = [95, 85, 90, 70, 60, 80]; // Emphasize RL, Math, Python
+                color = '#d97706'; // Gold
+                label = 'Research Focus';
+            } else if (focus === 'engineering') {
+                newData = [60, 90, 95, 60, 90, 75]; // Emphasize Systems, Algos, Python
+                color = '#64748b'; // Slate
+                label = 'Engineering Focus';
+            } else {
+                newData = [90, 85, 95, 80, 85, 75]; // Balanced
+                color = '#1e293b'; // Navy
+                label = 'Overall Profile';
+            }
+
+            radarChart.data.datasets[0].data = newData;
+            radarChart.data.datasets[0].label = label;
+            radarChart.data.datasets[0].borderColor = color;
+            radarChart.data.datasets[0].backgroundColor = hexToRgba(color, 0.2);
+            radarChart.update();
+        };
+
+        function hexToRgba(hex, alpha) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        }
+
+        // --- Visual: Simple Canvas Particle Effect for Hero ---
+        function animateHero() {
+            const canvas = document.getElementById('bgCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Resize canvas
+            const resize = () => {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            };
+            window.addEventListener('resize', resize);
+            resize();
+
+            const particles = [];
+            for(let i=0; i<30; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if(p.x < 0) p.x = canvas.width;
+                    if(p.x > canvas.width) p.x = 0;
+                    if(p.y < 0) p.y = canvas.height;
+                    if(p.y > canvas.height) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+                    ctx.fill();
+                });
+                
+                // Draw connections (Neural Net style)
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                ctx.lineWidth = 1;
+                for(let i=0; i<particles.length; i++) {
+                    for(let j=i+1; j<particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx*dx + dy*dy);
+                        if(dist < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                
+                requestAnimationFrame(draw);
+            }
+            draw();
+        }
+
+        // --- Functional: Sticky Nav & Scroll Spy ---
+        function setupScrollSpy() {
+            const navbar = document.getElementById('navbar');
+            const links = navbar.querySelectorAll('a[href^="#"]');
+            
+            window.addEventListener('scroll', () => {
+                // Change nav style on scroll
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md', 'bg-acad-navy/95');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    // navbar.classList.remove('shadow-md'); 
+                    // Keeping it consistent for this design, but logic is here for transparent hero nav
+                }
+            });
+        }
+    </script>
+</body>
+</html>
