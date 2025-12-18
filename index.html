@@ -10,7 +10,7 @@
 
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Sibtain Ahmed | Software Engineer & AI Researcher">
+    <meta name="title" content="Sibtain Ahmed | Software Engineer, AI Researcher & Programming Mentor">
     <meta name="description" content="PhD Researcher at ISU specializing in LLM Orchestration, RAG systems, and AI transparency. Engineering AI with mathematical rigor.">
 
     <!-- Open Graph / Facebook / LinkedIn -->
@@ -18,14 +18,14 @@
     <meta property="og:url" content="https://sibtainahmed.github.io/"> <!-- Replace with your actual URL -->
     <meta property="og:title" content="Sibtain Ahmed | Software Engineer & AI Researcher">
     <meta property="og:description" content="PhD Researcher at ISU specializing in LLM Orchestration, RAG systems, and AI transparency.">
-    <meta property="og:image" content="https://sibtainahmed.github.io/PXL_20251127_213229910.PORTRAIT.jpg"> <!-- Points to your photo -->
+    <meta property="og:image" content="https://sibtainahmed.github.io/data/openGraph.jpg"> <!-- Points to your photo -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sibtainahmed.github.io/">
     <meta property="twitter:title" content="Sibtain Ahmed | Software Engineer & AI Researcher">
     <meta property="twitter:description" content="PhD Researcher at ISU specializing in LLM Orchestration and AI transparency.">
-    <meta property="twitter:image" content="https://sibtainahmed.github.io/PXL_20251127_213229910.PORTRAIT.jpg">
+    <meta property="twitter:image" content="https://sibtainahmed.github.io/data/openGraph.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -107,7 +107,7 @@
                 <a href="#journey" class="hover:text-white transition-colors">Journey</a>
                 <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
                 <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-                <a href="mailto:iamsibtainahmed@gmail.com" class="px-5 py-2.5 bg-brand-blue text-white rounded-lg font-bold transition-all flex items-center gap-2">
+                <a href="data/resume.pdf" target="_blank" class="px-5 py-2.5 bg-brand-blue text-white rounded-lg font-bold transition-all flex items-center gap-2">
                     <i class="fas fa-file-download"></i> CV
                 </a>
             </div>
@@ -139,7 +139,7 @@
                     <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="px-5 md:px-6 py-3 md:py-4 text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2">
                         <i class="fab fa-linkedin text-brand-blue"></i> LinkedIn
                     </a>
-                    <a href="mailto:iamsibtainahmed@gmail.com" class="px-5 md:px-6 py-3 md:py-4 text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2">
+                    <a href="data/resume.pdf" target="_blank" class="px-5 md:px-6 py-3 md:py-4 text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2">
                         <i class="fas fa-file-pdf text-brand-blue"></i> Resume
                     </a>
                 </div>
@@ -169,7 +169,7 @@
                     <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl glass-card p-2">
                         <div class="w-full h-full rounded-2xl overflow-hidden bg-brand-dark/50">
                             <!-- Placeholder image - Replace 'profile.jpg' with your actual image path -->
-                            <img src="20251127_145349.jpg" alt="Sibtain Ahmed" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                            <img src="data/profile_1.jpeg" alt="Sibtain Ahmed" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
                         </div>
                     </div>
                     <!-- Decorative Elements -->
@@ -382,7 +382,7 @@
     <script>
         // TYPING EFFECT
         const typingText = document.getElementById('typing-text');
-        const roles = ["Software Engineer", "AI Researcher"];
+        const roles = ["Software Engineer", "AI Researcher", "Programming Mentor"];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -397,7 +397,7 @@
                 charIndex++;
             }
 
-            let speed = isDeleting ? 50 : 150;
+            let speed = isDeleting ? 60 : 150;
 
             if (!isDeleting && charIndex === currentRole.length) {
                 isDeleting = true;
