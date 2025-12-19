@@ -274,10 +274,10 @@
     </section>
 
     <!-- Radar & Skills -->
-    <section class="py-24 bg-slate-50" id="expertise">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    <!-- <section class="py-24 bg-slate-50" id="expertise">
+        <div class=" max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
             <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <div class="h-[400px]">
+                <div class="h-[300px] md:h-[400px]">
                     <canvas id="skillsRadar"></canvas>
                 </div>
             </div>
@@ -296,6 +296,60 @@
                         <h4 class="font-bold text-brand-blue mb-2">Problem Solving</h4>
                         <p class="text-sm text-slate-600">Advanced DSA, Competitive Programming, Mathematical Optimization, 170/170 GRE Quant.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Radar & Skills -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-slate-50 overflow-x-hidden" id="expertise">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
+                    grid grid-cols-1 lg:grid-cols-2 
+                    gap-10 sm:gap-14 lg:gap-20 items-center">
+
+
+            <!-- Skills -->
+            <div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl 
+                        font-bold text-brand-dark 
+                        mb-4 sm:mb-6 tracking-tight fade-in-up">
+                    Technical Profile.
+                </h2>
+
+                <div class="space-y-4 sm:space-y-6 stagger-children">
+                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-2">
+                            AI & Machine Learning
+                        </h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            LangChain, PyTorch, RAG, pgvector, RLHF, AWS Bedrock, Tool-Calling Architectures.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-2">
+                            Full Stack Engineering
+                        </h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            FastAPI, Python, React.js, Next.js, Docker, GCP Cloud Run, PostgreSQL, Microservices.
+                        </p>
+                    </div>
+
+                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-2">
+                            Problem Solving
+                        </h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Advanced DSA, Competitive Programming, Mathematical Optimization, 170/170 GRE Quant.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Radar -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+                <div class="h-[260px] sm:h-[320px] md:h-[380px] lg:h-[400px]">
+                    <canvas id="skillsRadar"></canvas>
                 </div>
             </div>
         </div>
