@@ -274,7 +274,7 @@
     <!-- Radar & Skills -->
     <section class="py-24 bg-slate-50" id="expertise">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 fade-in-up">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
                 <div class="h-[400px]">
                     <canvas id="skillsRadar"></canvas>
                 </div>
@@ -302,7 +302,7 @@
     <!-- Projects (Restored Grid) -->
     <section class="py-24 bg-white" id="projects">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-12 fade-in-up">Featured Engineering Works</h2>
+            <h2 class="text-3xl font-bold text-brand-dark mb-12">Featured Engineering Works</h2>
             <div class="grid md:grid-cols-3 gap-8 stagger-children">
                 <!-- Dialogify -->
                 <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition-all hover:shadow-xl">
@@ -376,7 +376,7 @@
     <!-- TESTIMONIALS -->
     <section class="py-24 bg-brand-dark text-white relative" id="testimonials">
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center mb-16 fade-in-up">
+            <div class="text-center mb-16">
                 <h2 class="text-xs font-black tracking-[0.2em] text-brand-blue uppercase mb-4">Impact & Feedback</h2>
                 <h3 class="text-3xl md:text-5xl font-serif font-bold">What People Say</h3>
                 <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Being a Teaching Assistant is about more than grading. It's about mentorship and supporting the next generation of engineers.</p>
@@ -471,7 +471,7 @@
     <footer class="bg-brand-dark text-white pt-24 pb-12" id="contact">
         <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
             <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8">Let's Connect</h2>
-            <p class="text-slate-400 mb-12 max-w-lg mx-auto text-sm leading-relaxed">
+            <p class="text-slate-400 mb-12 max-w-lg mx-auto text-sm leading-relaxed fade-in-up">
                 I am currently open to Summer 2025 Internship opportunities in Software Engineering and Machine Learning Research.
             </p>
             
@@ -634,6 +634,38 @@
                 link.setAttribute('title', 'View GitHub Profile');
             }
         });
+
+        // SCROLL ANIMATIONS
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Once animated, we can unobserve to improve performance
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .stagger-children');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Run when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollAnimations);
+        } else {
+            // DOM is already ready
+            initScrollAnimations();
+        }
     </script>
 </body>
 </html>
