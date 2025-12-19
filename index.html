@@ -92,6 +92,39 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        /* Scroll Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        /* Stagger delay for child elements */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .stagger-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
@@ -120,7 +153,7 @@
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div class="text-center lg:text-left order-2 lg:order-1">       
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/10 border border-brand-blue/20 text-brand-accent text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 text-brand-accent text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
                     <span id="typing-text" class="typing-cursor"></span>
                 </div>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 md:mb-8">
@@ -194,10 +227,10 @@
     <!-- The Journey (Restored & Enhanced) -->
     <section class="py-24 bg-white" id="journey">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-16 flex items-center gap-4">
+            <h2 class="text-3xl font-bold text-brand-dark mb-16 flex items-center gap-4 fade-in-up">
                 Karachi to Ames <span class="h-px bg-slate-200 flex-grow"></span>
             </h2>
-            <div class="relative border-l-2 border-slate-100 ml-4 pl-8 space-y-16">
+            <div class="relative border-l-2 border-slate-100 ml-4 pl-8 space-y-16 stagger-children">
                 <!-- ISU -->
                 <div class="relative">
                     <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-brand-blue border-4 border-white"></div>
@@ -241,14 +274,14 @@
     <!-- Radar & Skills -->
     <section class="py-24 bg-slate-50" id="expertise">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 fade-in-up">
                 <div class="h-[400px]">
                     <canvas id="skillsRadar"></canvas>
                 </div>
             </div>
             <div>
-                <h2 class="text-4xl font-bold text-brand-dark mb-6 tracking-tight">Technical Profile.</h2>
-                <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-brand-dark mb-6 tracking-tight fade-in-up">Technical Profile.</h2>
+                <div class="space-y-6 stagger-children">
                     <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
                         <h4 class="font-bold text-brand-blue mb-2">AI & Machine Learning</h4>
                         <p class="text-sm text-slate-600">LangChain, PyTorch, RAG, pgvector, RLHF, AWS Bedrock, Tool-Calling Architectures.</p>
@@ -269,8 +302,8 @@
     <!-- Projects (Restored Grid) -->
     <section class="py-24 bg-white" id="projects">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-12">Featured Engineering Works</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <h2 class="text-3xl font-bold text-brand-dark mb-12 fade-in-up">Featured Engineering Works</h2>
+            <div class="grid md:grid-cols-3 gap-8 stagger-children">
                 <!-- Dialogify -->
                 <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition-all hover:shadow-xl">
                     <div class="w-12 h-12 bg-brand-dark text-brand-blue rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
@@ -314,8 +347,8 @@
     <!-- Impact & Feedback (Restored) -->
     <section class="py-24 bg-slate-50" id="impact">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-12">Leadership & Impact</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            <h2 class="text-3xl font-bold text-brand-dark mb-12 fade-in-up">Leadership & Impact</h2>
+            <div class="grid md:grid-cols-2 gap-8 stagger-children">
                 <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex text-brand-blue mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -340,82 +373,76 @@
         </div>
     </section>
 
-    <!-- Life Beyond Lab (Restored) -->
-    <!-- <section class="py-24 bg-brand-dark text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Beyond the Lab.</h2>
-                <p class="text-slate-400 mb-8 leading-relaxed">I measure my success by the breadth of my intellectual pursuits—whether it's running distance, mastering chess theory, or mentoring the next generation.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4"><i class="fas fa-puzzle-piece text-brand-blue"></i> <span>Harvard Puzzle Day: 9/9 Challenges Solved</span></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-graduation-cap text-brand-blue"></i> <span>Trained underprivileged students at iCodeGuru</span></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-running text-brand-blue"></i> <span>Amateur Long-distance Runner</span></div>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 group hover:border-brand-blue transition-colors">
-                    <i class="fas fa-chess text-3xl mb-4 text-brand-blue"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Chess</p>
-                    <p class="text-sm mt-1">Game Theory</p>
-                </div>
-                <div class="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 group hover:border-brand-blue transition-colors">
-                    <i class="fas fa-microphone-alt text-3xl mb-4 text-brand-blue"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Mentorship</p>
-                    <p class="text-sm mt-1">iCodeGuru Trainer</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <-- Footer -->
-    <!-- <footer class="py-12 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-slate-500 text-sm">© 2024 Sibtain Ahmed • Built for SDE Internships</div>
-            <div class="flex gap-8">
-                <a href="https://github.com/SibtainAhmed" class="text-slate-400 hover:text-brand-blue transition-colors text-2xl"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/SibtainAhmed" class="text-slate-400 hover:text-brand-blue transition-colors text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:iamsibtainahmed@gmail.com" class="text-slate-400 hover:text-brand-blue transition-colors text-2xl"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer> 
-     -->
-
-
     <!-- TESTIMONIALS -->
     <section class="py-24 bg-brand-dark text-white relative" id="testimonials">
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 fade-in-up">
                 <h2 class="text-xs font-black tracking-[0.2em] text-brand-blue uppercase mb-4">Impact & Feedback</h2>
                 <h3 class="text-3xl md:text-5xl font-serif font-bold">What People Say</h3>
                 <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Being a Teaching Assistant is about more than grading. It's about mentorship and supporting the next generation of engineers.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
                 <!-- Card 1 -->
+                <!-- To add profile image: Update src attribute in img tag below (e.g., src="data/profile1.jpg") -->
+                <!-- To add LinkedIn/GitHub link: Update href attribute in the link tag and change icon class (fab fa-linkedin-in or fab fa-github) -->
                 <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group">
-                    <div class="text-acad-gold text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"Sibtain's explanation style is unique. He doesn't just give the answer; he helps you derive it. His patience with international students made a huge difference."</p>
-                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
-                        <div class="w-10 h-10 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue">CS</div>
-                        <div><h5 class="font-bold text-sm">Undergrad Student</h5><p class="text-xs text-slate-500">Iowa State University</p></div>
+                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"Sibtain was my TA for a semester but the impact he left on me was great. He inspired me to follow his footsteps and apply to be a TA. His method of instruction is clear and concise, and he is always willing to break it down further for you. He is truly one of the nicest people and is incredibly hard working."</p>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-4 flex-1">
+                            <div class="relative w-12 h-12 flex-shrink-0">
+                                <img src="" alt="CS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
+                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">CS</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-sm">Gage Edwards</h5>
+                                <p class="text-xs text-slate-500">Iowa State University</p>
+                            </div>
+                        </div>
+                        <a href="https://www.instagram.com/gage_edwards06/" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
+                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all transform md:-translate-y-6 group">
-                    <div class="text-acad-gold text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"The most sincere TA I've ever had. You can tell he actually cares about the subject and our learning. His passion for AI is contagious!"</p>
-                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
-                        <div class="w-10 h-10 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue">JD</div>
-                        <div><h5 class="font-bold text-sm">CS Senior</h5><p class="text-xs text-slate-500">Iowa State University</p></div>
+                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"I had a really great experience with you as a TA in COMS 1270. You were always approachable, patient, and genuinely invested in helping students understand the material. Whether during labs or office hours, you took the time to explain concepts clearly and made sure everyone felt comfortable asking questions. Your support throughout the semester made a big difference in my learning, and I truly appreciated how available and encouraging you were."</p>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-4 flex-1">
+                            <div class="relative w-12 h-12 flex-shrink-0">
+                                <img src="data/sebastian.jpeg" alt="Sebastian Bjørnsti" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
+                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">SB</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-sm">Sebastian Bjørnsti</h5>
+                                <p class="text-xs text-slate-500">Iowa State University</p>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/sebastian-bjornsti/" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
+                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group">
-                    <div class="text-acad-gold text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
+                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
                     <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"He stayed back an hour after the lab just to help us debug our final project. That level of dedication is rare in an academic setting."</p>
-                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
-                        <div class="w-10 h-10 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue">AL</div>
-                        <div><h5 class="font-bold text-sm">Alice L.</h5><p class="text-xs text-slate-500">Software Eng. Student</p></div>
+                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
+                        <div class="flex items-center gap-4 flex-1">
+                            <div class="relative w-12 h-12 flex-shrink-0">
+                                <img src="" alt="Alice L." onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
+                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">AL</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-sm">Alice L.</h5>
+                                <p class="text-xs text-slate-500">Software Eng. Student</p>
+                            </div>
+                        </div>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
+                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -588,6 +615,23 @@
                     }
                 },
                 plugins: { legend: { display: false } }
+            }
+        });
+
+        // AUTO-DETECT LINKEDIN/GITHUB ICONS IN TESTIMONIALS
+        document.querySelectorAll('#testimonials a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            
+            const icon = link.querySelector('i');
+            if (!icon) return;
+            
+            if (href.includes('linkedin.com')) {
+                icon.className = 'fab fa-linkedin-in text-xs text-slate-400 group-hover/link:text-[#0077b5] transition-colors';
+                link.setAttribute('title', 'View LinkedIn Profile');
+            } else if (href.includes('github.com')) {
+                icon.className = 'fab fa-github text-xs text-slate-400 group-hover/link:text-white transition-colors';
+                link.setAttribute('title', 'View GitHub Profile');
             }
         });
     </script>
