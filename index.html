@@ -83,11 +83,10 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         /* Cursor for typing effect */
-        .typing-cursor::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
+        .typing-cursor::after { content: '_'; animation: blink 1s infinite; color: #3b82f6; }
+        
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
@@ -157,8 +156,12 @@
             <div class="text-center lg:text-left order-2 lg:order-1">       
                 <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 text-brand-accent text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
                     <span class="flex h-2 w-2 rounded-full bg-brand-blue"></span>
-                    <span id="typing-text" class="typing-cursor"></span>
+                    <span id="typing-text" class="typing-cursor font-mono"></span>
                 </div>
+                <!-- <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-blue"></span>
+                    <span id="typing-text" class="text-[10px] md:text-xs font-mono font-medium text-slate-300 tracking-tight typing-cursor uppercase"></span>
+                </div> -->
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 md:mb-8">
                     Engineering AI with <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">Mathematical Rigor.</span>
@@ -200,7 +203,7 @@
 
             <!-- Photo Section -->
             <div class="order-1 lg:order-2 flex justify-center">
-                <div class="relative w-64 md:w-80 lg:w-96 aspect-square">
+                <div class="relative w-64 md:w-80 lg:w-96">
                     
                     <!-- Outer shadow / glow -->
                     <div class="absolute inset-0 rounded-3xl 
@@ -223,7 +226,7 @@
                     <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"></div>
             
                     <!-- Floating Tech Badge -->
-                    <div class="absolute -bottom-4 right-4 z-20 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100">
+                    <!-- <div class="absolute -bottom-4 right-4 z-20 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100">
                         <div class="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue">
                             <i class="fas fa-code"></i>
                         </div>
@@ -231,7 +234,7 @@
                             <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Stack Focus</p>
                             <p class="text-xs font-bold text-brand-dark">Python • FastAPI • RAG</p>
                         </div>
-                    </div>
+                    </div> -->
             
                 </div>
             </div>
@@ -619,8 +622,6 @@
         </div>
     </section>
 
-
-
     <!-- GALLERY SNAPSHOTS -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
@@ -678,6 +679,20 @@
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
+
+
+        // TYPING
+        // const typingText = document.getElementById('typing-text');
+        // const roles = ["Software Engineer", "AI Researcher", "Competitive Programmer", "Technical Mentor"];
+        let rIdx = 0, cIdx = 0, deleting = false;
+        function type() {
+            const role = roles[rIdx];
+            typingText.textContent = deleting ? role.substring(0, cIdx--) : role.substring(0, cIdx++);
+            if (!deleting && cIdx > role.length) { deleting = true; setTimeout(type, 2000); return; }
+            if (deleting && cIdx < 0) { deleting = false; rIdx = (rIdx + 1) % roles.length; cIdx = 0; }
+            setTimeout(type, deleting ? 50 : 100);
+        }
+        type();
 
         function typeEffect() {
             const currentRole = roles[roleIndex];
@@ -758,7 +773,9 @@
         // INITIALIZE
         init();
         animate();
-        typeEffect();
+        // typeEffect();
+
+        
 
         // RADAR CHART
         const radarCtx = document.getElementById('skillsRadar').getContext('2d');
