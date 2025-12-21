@@ -168,7 +168,7 @@
                     Merging production-grade engineering with PhD research in RLHF transparency.
                 </p>
                 
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-4">
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-6">
                     <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="btn-primary px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white rounded-xl font-bold flex items-center gap-2">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
@@ -197,21 +197,31 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Photo Section -->
             <div class="order-1 lg:order-2 flex justify-center">
                 <div class="relative w-64 md:w-80 lg:w-96 aspect-square">
-                    <!-- The actual photo container -->
-                    <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl glass-card p-2">
+                    
+                    <!-- Outer shadow / glow -->
+                    <div class="absolute inset-0 rounded-3xl 
+                                shadow-[0_30px_80px_-20px_rgba(59,130,246,0.35)]
+                                blur-[1px]"></div>
+            
+                    <!-- Photo container -->
+                    <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden 
+                                border border-white/10 shadow-2xl glass-card p-2">
                         <div class="w-full h-full rounded-2xl overflow-hidden bg-brand-dark/50">
-                            <!-- Placeholder image - Replace 'profile.jpg' with your actual image path -->
-                            <img src="data/profile_1.jpeg" alt="Sibtain Ahmed" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                            <img src="data/profile_1.jpeg"
+                                 alt="Sibtain Ahmed"
+                                 onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'"
+                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
                         </div>
                     </div>
+            
                     <!-- Decorative Elements -->
                     <div class="absolute -top-6 -right-6 w-32 h-32 bg-brand-blue/20 rounded-full blur-3xl animate-pulse"></div>
                     <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"></div>
-                    
+            
                     <!-- Floating Tech Badge -->
                     <div class="absolute -bottom-4 right-4 z-20 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100">
                         <div class="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue">
@@ -222,6 +232,7 @@
                             <p class="text-xs font-bold text-brand-dark">Python • FastAPI • RAG</p>
                         </div>
                     </div>
+            
                 </div>
             </div>
         </div>
@@ -406,26 +417,99 @@
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-brand-dark mb-12">Leadership & Impact</h2>
             <div class="grid md:grid-cols-2 gap-8">
+
                 <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+    
                     <div>
-                        <div class="flex text-brand-blue mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-slate-600 italic leading-relaxed">"Being guided by Mr. Sibtain Ahmed – a very enthusiastic and friendly Team Leader – helped me quickly integrate into the class right from the very first sessions. He not only provided detailed and clear instructions on how to complete assignments throughout the course but also always tried to bridge the gap between group members by regularly checking in on everyone's situation, sharing stories, and encouraging everyone to talk about their personal interests to find common ground. Thanks to that, the class atmosphere became warm, cheerful, and everyone could easily support one another. I am truly grateful for his dedication and hope to continue learning with him in the future."</p>
+                        <div class="flex text-brand-blue mb-4 gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                
+                        <p class="text-slate-600 italic leading-relaxed">
+                            "Being guided by Mr. Sibtain Ahmed – a very enthusiastic and friendly Team Leader – helped me quickly integrate into the class right from the very first sessions. He not only provided detailed and clear instructions on how to complete assignments throughout the course but also always tried to bridge the gap between group members by regularly checking in on everyone's situation, sharing stories, and encouraging everyone to talk about their personal interests to find common ground. Thanks to that, the class atmosphere became warm, cheerful, and everyone could easily support one another. I am truly grateful for his dedication and hope to continue learning with him in the future."
+                        </p>
                     </div>
-                    <div class="mt-8 flex items-center gap-4 border-t pt-6">
-                        <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center font-bold text-brand-blue">SL</div>
-                        <div><p class="text-sm font-bold">Stanford Code-in-Place</p><p class="text-xs text-slate-400">Section Leader Feedback</p></div>
+                
+                    <!-- Feedback Provider -->
+                    <div class="mt-8 flex items-center justify-between border-t pt-6">
+                
+                        <div class="flex items-center gap-4">
+                            <!-- Profile Image -->
+                            <img
+                                src="data/ThaoPhuong.png"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                class="w-12 h-12 rounded-full object-cover"
+                                alt="Feedback Provider">
+                
+                            <!-- Fallback Initials -->
+                            <div class="w-12 h-12 rounded-full bg-brand-blue/10 hidden items-center justify-center font-bold text-brand-blue">
+                                TL
+                            </div>
+                
+                            <!-- Name & Role -->
+                            <div>
+                                <p class="text-sm font-bold text-brand-dark">Thao Phuong Tran</p>
+                                <p class="text-xs text-slate-400">Stanford Code in Place · Student</p>
+                            </div>
+                        </div>
+                
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/thao-phuong-tran-901820332/"
+                           target="_blank"
+                           class="text-slate-400 hover:text-brand-blue transition">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                
                     </div>
                 </div>
+                
                 <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+    
                     <div>
-                        <div class="flex text-brand-blue mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="text-slate-600 italic leading-relaxed">"Under Sibtain's mentorship, our community grew to 100+ members, establishing a culture of excellence in algorithmic problem solving."</p>
+                        <div class="flex text-brand-blue mb-4 gap-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                
+                        <p class="text-slate-600 italic leading-relaxed">
+                            "Under Sibtain's mentorship, our community grew to 100+ members, establishing a culture of excellence in algorithmic problem solving."
+                        </p>
                     </div>
-                    <div class="mt-8 flex items-center gap-4 border-t pt-6">
-                        <div class="w-12 h-12 rounded-full bg-brand-blue/10 flex items-center justify-center font-bold text-brand-blue">QC</div>
-                        <div><p class="text-sm font-bold">QubtiCoders Community</p><p class="text-xs text-slate-400">Co-founder Review</p></div>
+                
+                    <!-- Feedback Provider -->
+                    <div class="mt-8 flex items-center justify-between border-t pt-6">
+                
+                        <div class="flex items-center gap-4">
+                            <!-- Profile Image -->
+                            <img
+                                src="data/FaizanSheikh.jpeg"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                class="w-12 h-12 rounded-full object-cover"
+                                alt="Feedback Provider">
+                
+                            <!-- Fallback Initials -->
+                            <div class="w-12 h-12 rounded-full bg-brand-blue/10 hidden items-center justify-center font-bold text-brand-blue">
+                                TL
+                            </div>
+                
+                            <!-- Name & Role -->
+                            <div>
+                                <p class="text-sm font-bold text-brand-dark">Faizan Sheikh</p>
+                                <p class="text-xs text-slate-400">QubtiCoders · Co-founder</p>
+                            </div>
+                        </div>
+                
+                        <!-- LinkedIn -->
+                        <a href="https://pk.linkedin.com/in/faizan-sheikh-0317621b9"
+                           target="_blank"
+                           class="text-slate-400 hover:text-brand-blue transition">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -434,7 +518,7 @@
     <section class="py-24 bg-brand-dark text-white relative" id="testimonials">
         <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-xs font-black tracking-[0.2em] text-brand-blue uppercase mb-4">Impact & Feedback</h2>
+                <h2 class="text-xs font-black tracking-[0.2em] text-brand-blue uppercase mb-5">Impact & Feedback</h2>
                 <h3 class="text-3xl md:text-5xl font-serif font-bold">What People Say</h3>
                 <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Being a Teaching Assistant is about more than grading. It's about mentorship and supporting the next generation of engineers.</p>
             </div>
