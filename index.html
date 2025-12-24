@@ -40,9 +40,12 @@
                         'brand-dark': '#020617',
                         'brand-blue': '#3b82f6',
                         'brand-accent': '#60a5fa',
+                        'leetcode-orange': '#FFA116',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -317,6 +320,90 @@
         </div>
     </section> -->
 
+    <!-- NEW SECTION: ALGORITHMIC PROWESS & LEETCODE -->
+    <section class="py-24 relative overflow-hidden bg-brand-dark" id="problem-solving">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-xs font-black tracking-[0.3em] text-brand-blue uppercase mb-4">The Logic Core</h2>
+                    <h3 class="text-3xl sm:text-4xl font-serif font-black text-white">Problem Solving Expertise.</h3>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://leetcode.com/u/sibtainahmed/" target="_blank" class="flex items-center gap-2 text-leetcode-orange hover:brightness-125 transition-all font-mono text-sm">
+                        <i class="fas fa-code"></i> LeetCode Profile
+                    </a>
+                </div>
+            </div>
+
+            <!-- Custom Stats Dashboard -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                <!-- LeetCode Card -->
+                <div class="stat-card  p-6 md:p-8 rounded-3xl col-span-1 md:col-span-2 relative overflow-hidden">
+                    <div class="absolute -right-4 -top-4 text-leetcode-orange/10 text-9xl rotate-12"><i class="fas fa-terminal"></i></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-leetcode-orange/20 rounded-xl flex items-center justify-center text-leetcode-orange">
+                            <i class="fas fa-fire-alt text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base md:text-xl font-black text-white">LeetCode Knight</h4>
+                            <p class="text-xs text-slate-500 font-mono">Top 15% Globally</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-6"> 
+                        <div>
+                            <div class="text-xl md:text-2xl font-black text-white">500+</div>
+                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Solved</div>
+                        </div>
+                        <div>
+                            <div class="text-xl md:text-2xl font-black text-white">200+</div>
+                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Medium</div>
+                        </div>
+                        <div>
+                            <div class="text-xl md:text-2xl font-black text-white">50+</div>
+                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Hard</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competition Card: ICPC -->
+                <div class="stat-card p-6 md:p-8 rounded-3xl col-span-1">
+                    <div class="text-brand-blue text-xs font-black uppercase tracking-widest mb-4">ICPC NAQ</div>
+                    <div class="text-3xl md:text-4xl font-black text-white mb-2">4th <span class="text-lg text-slate-500">Pos</span></div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Secured top ranking in the North America Qualifier among elite universities.</p>
+                </div>
+
+                <!-- Mentorship Card -->
+                <div class="stat-card  p-6 md:p-8 rounded-3xl col-span-1">
+                    <div class="text-cyan-400 text-xs font-black uppercase tracking-widest mb-4">iCodeGuru</div>
+                    <div class="text-3xl md:text-4xl font-black text-white mb-2">Trainer</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Conducted DSA workshops and GRE Quant sessions for 100+ students.</p>
+                </div>
+            </div>
+
+            <!-- Terminal-style Experience -->
+            <div class="bg-black/50 border border-white/10 rounded-2xl  p-6 md:p-8 font-mono leading-relaxed shadow-2xl text-sm md:text-base">
+                <div class="flex gap-2 mb-4 border-b border-white/5 pb-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                    <span class="ml-4 text-[10px] text-slate-500 uppercase font-bold">think_process.cpp</span>
+                </div>
+                <p class="text-brand-blue mb-2">$ cat philosophy.txt</p>
+                <p class="text-slate-400 italic mb-4">"Problem solving isn't about knowing the syntax; it's about identifying the optimal recurrence relation and minimizing time complexity O(n log n) or better."</p>
+                <div class="grid md:grid-cols-2 gap-2 md:gap-8">
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Graph Theory (Dijkstra, Tarjan's, Flow)</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Dynamic Programming Optimization</span></li>
+                    </ul>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Segment Trees & Fenwick Trees</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Bit Manipulation & Math Rigor</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Radar & Skills -->
     <section class="py-16 sm:py-20 lg:py-24 bg-slate-50 overflow-x-hidden" id="expertise">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
