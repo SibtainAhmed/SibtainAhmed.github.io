@@ -3,33 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sibtain Ahmed | AI Researcher, Software Engineer & Educator</title>
-    
-    <!-- Favicon: Dynamic SVG Data URI -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23020617'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='60' fill='%233b82f6'>S</text></svg>">
+    <title>Sibtain Ahmed | PhD Researcher & Software Engineer</title>
 
-    
+    <!-- Favicon: Dynamic SVG Data URI -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='6' fill='%2317150f'/><text x='50%' y='50%' dominant-baseline='central' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='58' fill='%23a9814a'>S</text></svg>">
+
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Sibtain Ahmed | AI Researcher, Software Engineer & Educator">
-    <meta name="description" content="Graduate CS student at ISU with experience in software engineering, reinforcement learning, scalable AI applications, and mentoring future engineers.">
+    <meta name="title" content="Sibtain Ahmed | PhD Researcher & Software Engineer">
+    <meta name="description" content="PhD student in Computer Science at Iowa State University researching data attribution for RL-based LLM fine-tuning. Software engineer with production experience shipping RAG and LLM-orchestration systems.">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sibtainahmed.github.io/"> <!-- Replace with your actual URL -->
-    <meta property="og:title" content="Sibtain Ahmed | AI Researcher, Software Engineer & Educator">
-    <meta property="og:description" content="Graduate CS student at ISU with experience in software engineering, reinforcement learning, scalable AI applications, and mentoring future engineers.">
-    <meta property="og:image" content="https://sibtainahmed.github.io/data/openGraph.jpg"> <!-- Points to your photo -->
+    <meta property="og:url" content="https://sibtainahmed.github.io/">
+    <meta property="og:title" content="Sibtain Ahmed | PhD Researcher & Software Engineer">
+    <meta property="og:description" content="PhD student in Computer Science at Iowa State University researching data attribution for RL-based LLM fine-tuning. Software engineer with production experience shipping RAG and LLM-orchestration systems.">
+    <meta property="og:image" content="https://sibtainahmed.github.io/data/openGraph.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sibtainahmed.github.io/">
-    <meta property="twitter:title" content="Sibtain Ahmed | AI Researcher, Software Engineer & Educator">
-    <meta property="twitter:description" content="Graduate CS student at ISU with experience in software engineering, reinforcement learning, scalable AI applications, and mentoring future engineers.">
+    <meta property="twitter:title" content="Sibtain Ahmed | PhD Researcher & Software Engineer">
+    <meta property="twitter:description" content="PhD student in Computer Science at Iowa State University researching data attribution for RL-based LLM fine-tuning. Software engineer with production experience shipping RAG and LLM-orchestration systems.">
     <meta property="twitter:image" content="https://sibtainahmed.github.io/data/openGraph.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -37,15 +36,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#020617',
-                        'brand-blue': '#3b82f6',
-                        'brand-accent': '#60a5fa',
-                        'leetcode-orange': '#FFA116',
+                        'ink': '#17150f',
+                        'ink-soft': '#221f18',
+                        'gold': '#a9814a',
+                        'gold-dark': '#8a6a3a',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['Fira Code', 'monospace'],
-                        serif: ['Playfair Display', 'serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
@@ -54,628 +52,432 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; }
+
         .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
-        }
-        #canvas-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.6;
+            background: radial-gradient(circle at 50% 15%, #241f16 0%, #17150f 70%);
         }
         .glass-nav {
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .btn-primary {
-            background: #3b82f6;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        }
-        .btn-primary:hover {
-            background: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(23, 21, 15, 0.94);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Cursor for typing effect */
-        .typing-cursor::after { content: '_'; animation: blink 1s infinite; color: #3b82f6; }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        /* Scroll Animation Classes */
+        /* Scroll Animation Classes (kept minimal & subtle) */
         .fade-in-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
         }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .fade-in {
-            opacity: 0;
-            transition: opacity 0.8s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-        }
-        /* Stagger delay for child elements */
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-in { opacity: 0; transition: opacity 0.9s ease-out; }
+        .fade-in.visible { opacity: 1; }
         .stagger-children > * {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: translateY(14px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .stagger-children.visible > * {
-            opacity: 1;
-            transform: translateY(0);
+        .stagger-children.visible > * { opacity: 1; transform: translateY(0); }
+        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.15s; }
+        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.2s; }
+        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.25s; }
+        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.3s; }
+
+        .eyebrow {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #a9814a;
         }
-        .stagger-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
-        .stagger-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
-        .stagger-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
-        .stagger-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
-        .stagger-children.visible > *:nth-child(5) { transition-delay: 0.5s; }
-        .stagger-children.visible > *:nth-child(6) { transition-delay: 0.6s; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body class="bg-stone-50 text-ink antialiased">
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-xl md:text-2xl font-extrabold tracking-tighter text-white">
-                <a href="#hero" class="hover:text-white transition-colors">
-                    SIBTAIN<span class="text-brand-blue">AHMED</span>
-                </a>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 md:space-x-10 text-sm md:text-base font-medium text-slate-300">
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#journey" class="hover:text-white transition-colors">Journey</a>
-                <a href="#expertise" class="hover:text-white transition-colors">Expertise</a>
-                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-                <!-- <a href="data/resume.pdf" target="_blank" class="px-5 py-2.5 bg-brand-blue text-white rounded-lg font-bold transition-all flex items-center gap-2">
-                    <i class="fas fa-file-download"></i> CV
-                </a> -->
-                <a href="#contact" class="text-brand-blue border border-brand-blue/30 px-6 py-1.5 rounded hover:bg-brand-blue hover:text-white transition-all">Connect</a>
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="font-serif text-lg md:text-xl tracking-wide text-stone-50">
+                Sibtain <span class="text-gold">Ahmed</span>
+            </a>
+            <div class="hidden md:flex items-center gap-9 text-[13px] uppercase tracking-widest font-medium text-stone-400">
+                <a href="#experience" class="hover:text-stone-50 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-stone-50 transition-colors">Projects</a>
+                <a href="#expertise" class="hover:text-stone-50 transition-colors">Expertise</a>
+                <a href="#achievements" class="hover:text-stone-50 transition-colors">Achievements</a>
+                <a href="data/resume.pdf" target="_blank" class="hover:text-stone-50 transition-colors">Resume</a>
+                <a href="#contact" class="text-gold border border-gold/40 px-5 py-2 hover:bg-gold hover:text-ink transition-colors">Connect</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center hero-gradient pt-24 pb-12 md:pt-20 overflow-hidden">
-        <canvas id="canvas-bg"></canvas>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="text-center lg:text-left order-2 lg:order-1">       
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 border border-brand-blue/20 text-brand-accent text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 md:mb-8">
-                    <span class="flex h-2 w-2 rounded-full bg-brand-blue"></span>
-                    <span id="typing-text" class="typing-cursor font-mono"></span>
-                </div>
-                <!-- <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-                    <span class="flex h-2 w-2 rounded-full bg-brand-blue"></span>
-                    <span id="typing-text" class="text-[10px] md:text-xs font-mono font-medium text-slate-300 tracking-tight typing-cursor uppercase"></span>
-                </div> -->
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6 md:mb-8">
-                    Engineering AI with <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">Mathematical Rigor.</span>
+    <section id="hero" class="relative min-h-screen flex items-center hero-gradient pt-28 pb-16">
+        <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
+            <div class="text-center lg:text-left order-2 lg:order-1">
+                <p class="eyebrow mb-6">PhD Researcher · Software Engineer</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-stone-50 leading-[1.15] mb-8">
+                    Engineering AI with<br>
+                    <span class="italic text-gold">Mathematical Rigor.</span>
                 </h1>
-                <p class="text-base md:text-lg text-slate-400 mb-8 md:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    Specializing in <strong>LLM Orchestration</strong> and <strong>RAG Systems</strong>. 
-                    Merging production-grade engineering with PhD research in RLHF transparency.
+                <p class="text-base md:text-lg text-stone-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    PhD student at Iowa State University researching data attribution for RL-based LLM fine-tuning.
+                    Formerly a software engineer shipping production RAG and LLM-orchestration systems.
                 </p>
-                
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3 md:gap-6">
-                    <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="btn-primary px-5 md:px-6 py-3 md:py-4 text-sm md:text-base text-white rounded-xl font-bold flex items-center gap-2">
+
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="px-6 py-3 text-sm bg-gold text-ink font-semibold hover:bg-gold-dark transition-colors flex items-center gap-2">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/SibtainAhmed" target="_blank" class="px-5 md:px-6 py-3 md:py-4 text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2">
-                        <i class="fab fa-github text-brand-blue"></i> GitHub
+                    <a href="https://github.com/SibtainAhmed" target="_blank" class="px-6 py-3 text-sm border border-stone-600 text-stone-200 font-semibold hover:border-gold hover:text-gold transition-colors flex items-center gap-2">
+                        <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="data/resume.pdf" target="_blank" class="px-5 md:px-6 py-3 md:py-4 text-sm md:text-base bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-xl font-bold transition-all flex items-center gap-2">
-                        <i class="fas fa-file-pdf text-brand-blue"></i> Resume
+                    <a href="data/resume.pdf" target="_blank" class="px-6 py-3 text-sm border border-stone-600 text-stone-200 font-semibold hover:border-gold hover:text-gold transition-colors flex items-center gap-2">
+                        <i class="fas fa-file-lines"></i> Resume
                     </a>
                 </div>
 
-                <div class="mt-10 md:mt-12 pt-8 border-t border-white/5 flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-10">
+                <div class="mt-14 pt-8 border-t border-white/10 flex flex-wrap justify-center lg:justify-start gap-10 md:gap-14">
                     <div class="text-center lg:text-left">
-                        <p class="text-xl md:text-2xl font-bold text-white">1,000+</p>
-                        <p class="text-[9px] md:text-[10px] uppercase font-bold text-slate-500 tracking-widest">Users Scaled</p>
+                        <p class="text-2xl font-serif text-stone-50">1,000+</p>
+                        <p class="text-[10px] uppercase font-semibold text-stone-500 tracking-widest mt-1">Users Scaled</p>
                     </div>
-                    <div class="hidden sm:block w-px h-8 bg-white/10"></div>
                     <div class="text-center lg:text-left">
-                        <p class="text-xl md:text-2xl font-bold text-white">170/170</p>
-                        <p class="text-[9px] md:text-[10px] uppercase font-bold text-slate-500 tracking-widest">GRE Quant</p>
+                        <p class="text-2xl font-serif text-stone-50">170/170</p>
+                        <p class="text-[10px] uppercase font-semibold text-stone-500 tracking-widest mt-1">GRE Quant</p>
                     </div>
-                    <div class="hidden sm:block w-px h-8 bg-white/10"></div>
                     <div class="text-center lg:text-left">
-                        <p class="text-xl md:text-2xl font-bold text-white">1st</p>
-                        <p class="text-[9px] md:text-[10px] uppercase font-bold text-slate-500 tracking-widest">TechFest '24</p>
+                        <p class="text-2xl font-serif text-stone-50">65+</p>
+                        <p class="text-[10px] uppercase font-semibold text-stone-500 tracking-widest mt-1">Students Mentored</p>
                     </div>
                 </div>
             </div>
 
             <!-- Photo Section -->
             <div class="order-1 lg:order-2 flex justify-center">
-                <div class="relative w-64 md:w-80 lg:w-96">
-                    
-                    <!-- Outer shadow / glow -->
-                    <div class="absolute inset-0 rounded-3xl 
-                                shadow-[0_30px_80px_-20px_rgba(59,130,246,0.35)]
-                                blur-[1px]"></div>
-            
-                    <!-- Photo container -->
-                    <div class="relative z-10 w-full h-full rounded-3xl overflow-hidden 
-                                border border-white/10 shadow-2xl glass-card p-2">
-                        <div class="w-full h-full rounded-2xl overflow-hidden bg-brand-dark/50">
-                            <img src="data/profile_1.jpeg"
-                                 alt="Sibtain Ahmed"
-                                 onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'"
-                                 class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-                        </div>
+                <div class="w-56 md:w-72 lg:w-80 border border-white/15">
+                    <div class="w-full aspect-[4/5] overflow-hidden">
+                        <img src="data/profile_1.jpeg"
+                             alt="Sibtain Ahmed"
+                             onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Sibtain'"
+                             class="w-full h-full object-cover">
                     </div>
-            
-                    <!-- Decorative Elements -->
-                    <div class="absolute -top-6 -right-6 w-32 h-32 bg-brand-blue/20 rounded-full blur-3xl animate-pulse"></div>
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"></div>
-            
-                    <!-- Floating Tech Badge -->
-                    <!-- <div class="absolute -bottom-4 right-4 z-20 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-xl flex items-center gap-3 border border-slate-100">
-                        <div class="w-10 h-10 bg-brand-blue/10 rounded-lg flex items-center justify-center text-brand-blue">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div>
-                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Stack Focus</p>
-                            <p class="text-xs font-bold text-brand-dark">Python • FastAPI • RAG</p>
-                        </div>
-                    </div> -->
-            
+                    <div class="border-t border-white/15 py-4 text-center">
+                        <p class="text-[10px] uppercase tracking-[0.2em] text-gold font-semibold">Currently</p>
+                        <p class="text-sm text-stone-300 mt-1 font-serif">PhD Student, Iowa State</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Journey (Restored & Enhanced) -->
-    <section class="py-24 bg-white" id="journey">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-16 flex items-center gap-4 fade-in-up">
-                Karachi to Ames <span class="h-px bg-slate-200 flex-grow"></span>
-            </h2>
-            <div class="relative border-l-2 border-slate-100 ml-4 pl-8 space-y-16 stagger-children">
-                <!-- ISU -->
+    <!-- Experience & Education -->
+    <section class="py-24 bg-white" id="experience">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="eyebrow mb-3 fade-in-up">Curriculum Vitae</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-ink mb-16 fade-in-up">Experience & Education</h2>
+
+            <div class="relative border-l border-stone-200 ml-2 pl-10 space-y-14 stagger-children">
+                <!-- ISU PhD -->
                 <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-brand-blue border-4 border-white"></div>
-                    <div>
-                        <span class="text-xs font-bold text-brand-blue uppercase tracking-widest">Aug 2025 — Present</span>
-                        <h3 class="text-xl font-bold text-brand-dark mt-1">PhD in Computer Science</h3>
-                        <p class="text-slate-500 font-medium">Iowa State University | Ames, IA</p>
-                        <p class="mt-4 text-slate-600 max-w-3xl leading-relaxed">
-                            Focused on <strong>Mathematical Attribution</strong> in RLHF. Researching how to trace model predictions back to specific training data to improve interpretability. Serving as Graduate TA for 65+ students.
-                        </p>
-                    </div>
+                    <div class="absolute -left-[45px] top-1 w-3 h-3 bg-gold border-2 border-white ring-1 ring-stone-300"></div>
+                    <span class="text-xs font-semibold text-gold uppercase tracking-widest">Aug 2025 — Present</span>
+                    <h3 class="text-xl font-serif font-bold text-ink mt-2">PhD in Computer Science <span class="text-stone-400 font-sans text-base font-normal">(MS expected Spring 2027)</span></h3>
+                    <p class="text-stone-500 text-sm mt-1">Iowa State University · Ames, IA</p>
+                    <p class="mt-4 text-stone-600 max-w-3xl leading-relaxed text-[15px]">
+                        Research focus: <strong class="text-ink">Data Attribution for RL-Based LLM Fine-Tuning</strong>. Investigating how individual training examples influence LLM behavior during PPO/GRPO-style RLHF pipelines, adapting influence-function and gradient-similarity methods to score training samples, and modifying Hugging Face TRL's <code class="text-xs bg-stone-100 px-1.5 py-0.5 rounded">PPOTrainer</code> internals for HPC-based GPU training.
+                    </p>
+                </div>
+                <!-- ISU TA -->
+                <div class="relative">
+                    <div class="absolute -left-[41px] top-1 w-2 h-2 rounded-full bg-stone-300"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-widest">Aug 2025 — Present</span>
+                    <h3 class="text-xl font-serif font-bold text-ink mt-2">Graduate Teaching Assistant</h3>
+                    <p class="text-stone-500 text-sm mt-1">Iowa State University · COMS 1270 & 3210</p>
+                    <p class="mt-4 text-stone-600 max-w-3xl leading-relaxed text-[15px]">
+                        Mentor 65+ students across Python programming, algorithms, and computer architecture. Facilitate hands-on labs and provide individualized feedback on assembly, CPU architecture, and memory systems.
+                    </p>
                 </div>
                 <!-- GoodCore -->
                 <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-300 border-4 border-white"></div>
-                    <div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Oct 2024 — Jun 2025</span>
-                        <h3 class="text-xl font-bold text-brand-dark mt-1">Software Engineer</h3>
-                        <p class="text-slate-500 font-medium">GoodCore | Karachi, PK</p>
-                        <p class="mt-4 text-slate-600 max-w-3xl leading-relaxed">
-                            Developed <strong>Briefing Helper</strong>, a RAG-powered data assistant. Built FastAPI microservices, optimized SQL retrieval via vector embeddings, and reduced model inference latency by 40%.
-                        </p>
-                    </div>
+                    <div class="absolute -left-[41px] top-1 w-2 h-2 rounded-full bg-stone-300"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-widest">Nov 2024 — Jun 2025</span>
+                    <h3 class="text-xl font-serif font-bold text-ink mt-2">Software Engineer</h3>
+                    <p class="text-stone-500 text-sm mt-1">GoodCore · Karachi, PK</p>
+                    <p class="mt-4 text-stone-600 max-w-3xl leading-relaxed text-[15px]">
+                        Led development of <strong class="text-ink">BriefingHelper</strong>, an AI data assistant enabling natural-language queries over internal data. Built FastAPI services handling 1,000+ concurrent users and a Streamlit microservice using LLM tool-calling and PgVector-based RAG, cutting hallucination by ~50%. Reduced LLM inference cost and latency by 40% via a two-stage call pipeline, and containerized services on AWS with Docker.
+                    </p>
+                </div>
+                <!-- KoderLabs -->
+                <div class="relative">
+                    <div class="absolute -left-[41px] top-1 w-2 h-2 rounded-full bg-stone-300"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-widest">Aug 2023 — Oct 2023</span>
+                    <h3 class="text-xl font-serif font-bold text-ink mt-2">Software Engineering Intern</h3>
+                    <p class="text-stone-500 text-sm mt-1">KoderLabs · Karachi, PK</p>
+                    <p class="mt-4 text-stone-600 max-w-3xl leading-relaxed text-[15px]">
+                        Integrated REST APIs across three web and Android apps using React-Query, Next.js, React Native, and TypeScript. Built state management and modular component logic, reducing load times by ~20% through Agile, test-driven collaboration with design, backend, and QA teams.
+                    </p>
                 </div>
                 <!-- NED -->
                 <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-300 border-4 border-white"></div>
-                    <div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">2020 — 2024</span>
-                        <h3 class="text-xl font-bold text-brand-dark mt-1">BE Computer Systems Engineering</h3>
-                        <p class="text-slate-500 font-medium">NED University | Karachi, PK</p>
-                        <p class="mt-4 text-slate-600 max-w-3xl leading-relaxed">
-                            CGPA: 3.61. Co-founded QubtiCoders. Won national level competitions (TechFest). Ranked in Top 15% of LeetCode users globally.
-                        </p>
-                    </div>
+                    <div class="absolute -left-[41px] top-1 w-2 h-2 rounded-full bg-stone-300"></div>
+                    <span class="text-xs font-semibold text-stone-400 uppercase tracking-widest">Oct 2020 — Aug 2024</span>
+                    <h3 class="text-xl font-serif font-bold text-ink mt-2">BE Computer Systems Engineering</h3>
+                    <p class="text-stone-500 text-sm mt-1">NED University of Engineering & Technology · Karachi, PK</p>
+                    <p class="mt-4 text-stone-600 max-w-3xl leading-relaxed text-[15px]">
+                        CGPA: 3.61/4.00. Co-founded QubtiCoders, a 100+ member competitive programming community, and ranked in the Top 15% of LeetCode users globally.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Radar & Skills -->
-    <!-- <section class="py-24 bg-slate-50" id="expertise">
-        <div class=" max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
-                <div class="h-[300px] md:h-[400px]">
-                    <canvas id="skillsRadar"></canvas>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-4xl font-bold text-brand-dark mb-6 tracking-tight fade-in-up">Technical Profile.</h2>
-                <div class="space-y-6 stagger-children">
-                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">AI & Machine Learning</h4>
-                        <p class="text-sm text-slate-600">LangChain, PyTorch, RAG, pgvector, RLHF, AWS Bedrock, Tool-Calling Architectures.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">Full Stack Engineering</h4>
-                        <p class="text-sm text-slate-600">FastAPI, Python, React.js, Next.js, Docker, GCP Cloud Run, PostgreSQL, Microservices.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">Problem Solving</h4>
-                        <p class="text-sm text-slate-600">Advanced DSA, Competitive Programming, Mathematical Optimization, 170/170 GRE Quant.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- NEW SECTION: ALGORITHMIC PROWESS & LEETCODE -->
-    <section class="py-24 relative overflow-hidden bg-brand-dark" id="problem-solving">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-14 md:mb-16 gap-6">
+    <!-- ACHIEVEMENTS & RECOGNITION -->
+    <section class="py-24 bg-ink text-white" id="achievements">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between md:items-end mb-14 gap-6 fade-in-up">
                 <div>
-                    <h2 class="text-xs font-black tracking-[0.3em] text-brand-blue uppercase mb-4">The Logic Core</h2>
-                    <h3 class="text-3xl sm:text-4xl font-serif font-black text-white">Problem Solving Expertise.</h3>
+                    <p class="eyebrow mb-3">Track Record</p>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-50">Achievements & Recognition</h2>
                 </div>
-                <div class="flex gap-4">
-                    <a href="https://leetcode.com/u/sibtainahmed/" target="_blank" class="flex items-center gap-2 text-leetcode-orange hover:brightness-125 transition-all font-mono text-sm">
-                        <i class="fas fa-code"></i> LeetCode Profile
-                    </a>
+                <a href="https://leetcode.com/u/sibtainahmed/" target="_blank" class="text-stone-400 hover:text-gold transition-colors text-sm flex items-center gap-2">
+                    <i class="fas fa-arrow-up-right-from-square text-xs"></i> LeetCode Profile
+                </a>
+            </div>
+
+            <!-- Stat blocks -->
+            <div class="grid grid-cols-2 md:grid-cols-4 border border-white/10 divide-x divide-y md:divide-y-0 divide-white/10 mb-16 stagger-children">
+                <div class="p-8 text-center">
+                    <p class="font-serif text-3xl md:text-4xl text-gold mb-2">170<span class="text-stone-500 text-lg">/170</span></p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold">GRE Quant, 94th %ile</p>
+                </div>
+                <div class="p-8 text-center">
+                    <p class="font-serif text-3xl md:text-4xl text-gold mb-2">Top 15%</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold">LeetCode Ranking</p>
+                </div>
+                <div class="p-8 text-center">
+                    <p class="font-serif text-3xl md:text-4xl text-gold mb-2">95th %ile</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold">Nat'l Quality Test</p>
+                </div>
+                <div class="p-8 text-center">
+                    <p class="font-serif text-3xl md:text-4xl text-gold mb-2">9/9</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold">Harvard Puzzle Day</p>
                 </div>
             </div>
 
-            <!-- Custom Stats Dashboard -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                <!-- LeetCode Card -->
-                <div class="stat-card  p-6 md:p-8 rounded-3xl col-span-1 md:col-span-2 relative overflow-hidden">
-                    <div class="absolute -right-4 -top-4 text-leetcode-orange/10 text-9xl rotate-12"><i class="fas fa-terminal"></i></div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-leetcode-orange/20 rounded-xl flex items-center justify-center text-leetcode-orange">
-                            <i class="fas fa-fire-alt text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-base md:text-xl font-black text-white">LeetCode Knight</h4>
-                            <p class="text-xs text-slate-500 font-mono">Top 15% Globally</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-6"> 
-                        <div>
-                            <div class="text-xl md:text-2xl font-black text-white">500+</div>
-                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Solved</div>
-                        </div>
-                        <div>
-                            <div class="text-xl md:text-2xl font-black text-white">200+</div>
-                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Medium</div>
-                        </div>
-                        <div>
-                            <div class="text-xl md:text-2xl font-black text-white">50+</div>
-                            <div class="text-[8px] md:text-[10px] uppercase font-bold text-slate-500">Hard</div>
-                        </div>
-                    </div>
+            <!-- Numbered highlights -->
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-6 border-t border-white/10 pt-12 stagger-children">
+                <div class="flex gap-5">
+                    <span class="font-serif text-gold text-lg">01</span>
+                    <p class="text-stone-300 text-sm leading-relaxed">Section Leader, Stanford Code-in-Place 2025 — selected to lead and mentor global participants in Python and problem-solving fundamentals.</p>
                 </div>
-
-                <!-- Competition Card: ICPC -->
-                <div class="stat-card p-6 md:p-8 rounded-3xl col-span-1">
-                    <div class="text-brand-blue text-xs font-black uppercase tracking-widest mb-4">ICPC NAQ</div>
-                    <div class="text-3xl md:text-4xl font-black text-white mb-2">4th <span class="text-lg text-slate-500">Pos</span></div>
-                    <p class="text-xs text-slate-400 leading-relaxed">Secured top ranking in the North America Qualifier among elite universities.</p>
+                <div class="flex gap-5">
+                    <span class="font-serif text-gold text-lg">02</span>
+                    <p class="text-stone-300 text-sm leading-relaxed">8 LeetCode profile badges recognized for advanced problem-solving and algorithmic proficiency.</p>
                 </div>
-
-                <!-- Mentorship Card -->
-                <div class="stat-card  p-6 md:p-8 rounded-3xl col-span-1">
-                    <div class="text-cyan-400 text-xs font-black uppercase tracking-widest mb-4">iCodeGuru</div>
-                    <div class="text-3xl md:text-4xl font-black text-white mb-2">Trainer</div>
-                    <p class="text-xs text-slate-400 leading-relaxed">Conducted DSA workshops and GRE Quant sessions for 100+ students.</p>
+                <div class="flex gap-5">
+                    <span class="font-serif text-gold text-lg">03</span>
+                    <p class="text-stone-300 text-sm leading-relaxed">Co-founder, QubtiCoders — a 100+ member competitive programming community at NED University.</p>
                 </div>
-            </div>
-
-            <!-- Terminal-style Experience -->
-            <div class="bg-black/50 border border-white/10 rounded-2xl  p-6 md:p-8 font-mono leading-relaxed shadow-2xl text-sm md:text-base">
-                <div class="flex gap-2 mb-4 border-b border-white/5 pb-2">
-                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                    <span class="ml-4 text-[10px] text-slate-500 uppercase font-bold">think_process.cpp</span>
-                </div>
-                <p class="text-brand-blue mb-2">$ cat philosophy.txt</p>
-                <p class="text-slate-400 italic mb-4">"Problem solving isn't about knowing the syntax; it's about identifying the optimal recurrence relation and minimizing time complexity O(n log n) or better."</p>
-                <div class="grid md:grid-cols-2 gap-2 md:gap-8">
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Graph Theory (Dijkstra, Tarjan's, Flow)</span></li>
-                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Dynamic Programming Optimization</span></li>
-                    </ul>
-                    <ul class="space-y-2">
-                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Segment Trees & Fenwick Trees</span></li>
-                        <li class="flex items-start gap-3"><span class="text-green-500">✓</span> <span class="text-slate-300 text-xs md:text-base">Bit Manipulation & Math Rigor</span></li>
-                    </ul>
+                <div class="flex gap-5">
+                    <span class="font-serif text-gold text-lg">04</span>
+                    <p class="text-stone-300 text-sm leading-relaxed">Graduate Teaching Assistant mentoring 65+ students in Python, algorithms, and computer architecture.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Radar & Skills -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-slate-50 overflow-x-hidden" id="expertise">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 
-                    grid grid-cols-1 lg:grid-cols-2 
-                    gap-10 sm:gap-14 lg:gap-20 items-center">
 
-
-            <!-- Skills -->
+    <!-- Expertise -->
+    <section class="py-24 bg-white" id="expertise">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
             <div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl 
-                        font-bold text-brand-dark 
-                        mb-4 sm:mb-6 tracking-tight fade-in-up">
-                    Technical Profile.
-                </h2>
+                <p class="eyebrow mb-3 fade-in-up">Technical Profile</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-ink mb-10 fade-in-up">Areas of Expertise</h2>
 
-                <div class="space-y-4 sm:space-y-6 stagger-children">
-                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">
-                            AI & Machine Learning
-                        </h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            LangChain, PyTorch, RAG, pgvector, RLHF, AWS Bedrock, Tool-Calling Architectures.
-                        </p>
+                <div class="divide-y divide-stone-200 stagger-children">
+                    <div class="py-6 first:pt-0">
+                        <h4 class="font-serif text-lg text-ink mb-2">AI, ML & Research</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed">PyTorch, Hugging Face TRL, RLHF (PPO/GRPO), LangGraph, RAG, pgvector, LLM tool-calling & prompt engineering.</p>
                     </div>
-
-                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">
-                            Full Stack Engineering
-                        </h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            FastAPI, Python, React.js, Next.js, Docker, GCP Cloud Run, PostgreSQL, Microservices.
-                        </p>
+                    <div class="py-6">
+                        <h4 class="font-serif text-lg text-ink mb-2">Full-Stack Engineering</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed">FastAPI, Python, Next.js, React, React Native, TypeScript, Docker, AWS, GCP Cloud Run, PostgreSQL, HPC/GPU training.</p>
                     </div>
-
-                    <div class="p-5 sm:p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
-                        <h4 class="font-bold text-brand-blue mb-2">
-                            Problem Solving
-                        </h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Advanced DSA, Competitive Programming, Mathematical Optimization, 170/170 GRE Quant.
-                        </p>
+                    <div class="py-6 last:pb-0">
+                        <h4 class="font-serif text-lg text-ink mb-2">Problem Solving & Teaching</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed">Advanced DSA, competitive programming (Top 15% LeetCode), mathematical optimization, and teaching 65+ students as a Graduate TA.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Radar -->
-            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
-                <div class="h-[260px] sm:h-[320px] md:h-[380px] lg:h-[400px]">
+            <div class="border border-stone-200 p-6 md:p-8 fade-in-up">
+                <div class="h-[280px] sm:h-[340px]">
                     <canvas id="skillsRadar"></canvas>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects (Restored Grid) -->
-    <section class="py-24 bg-white" id="projects">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-12">Featured Engineering Works</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+    <!-- Projects -->
+    <section class="py-24 bg-stone-100" id="projects">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="eyebrow mb-3 fade-in-up">Selected Work</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-ink mb-4 fade-in-up">Featured Projects</h2>
+            <p class="text-stone-500 mb-14 max-w-2xl fade-in-up">A selection of AI systems and platforms I've built — from multi-agent compliance automation to hackathon-winning safety pipelines.</p>
+
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-12 stagger-children">
+                <!-- EstatePermit -->
+                <div class="border-t border-stone-300 pt-6">
+                    <div class="flex items-baseline justify-between mb-3">
+                        <h3 class="text-xl font-serif font-bold text-ink">EstatePermit</h3>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">Jun – Jul 2026</span>
+                    </div>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-4">Multi-agent AI platform (PermitOS) that automates construction permit review by coordinating agents for jurisdictional, building-code, and site compliance analysis using LangGraph orchestration.</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wide">LangGraph · FastAPI · Multi-Agent Systems</p>
+                </div>
+                <!-- RunwAI -->
+                <div class="border-t border-stone-300 pt-6">
+                    <div class="flex items-baseline justify-between mb-3">
+                        <h3 class="text-xl font-serif font-bold text-ink">RunwAI</h3>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">May 2026</span>
+                    </div>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-4">Multimodal AI pipeline fusing live flight, weather, and video data via Qwen3-VL on AMD MI300X GPUs — AMD Developer Cloud Hackathon — achieving sub-4ms detection latency with an explainable rerouting agent at &gt;99% rules accuracy.</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wide">ROCm / HIP · Qwen3-VL · Real-Time Inference</p>
+                </div>
                 <!-- Dialogify -->
-                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition-all hover:shadow-xl">
-                    <div class="w-12 h-12 bg-brand-dark text-brand-blue rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                        <i class="fas fa-cloud-upload-alt text-xl"></i>
+                <div class="border-t border-stone-300 pt-6">
+                    <div class="flex items-baseline justify-between mb-3">
+                        <h3 class="text-xl font-serif font-bold text-ink">Dialogify</h3>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">FYP · Startup</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Dialogify</h3>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">AI cloud orchestrator for natural language VM deployments. Built with FastAPI and integrated with cloud SDKs for seamless automation.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">Next.js</span>
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">GCP</span>
-                    </div>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-4">AI chatbot that automates AWS/GCP workflows, letting non-technical users deploy VMs via natural language — cutting deployment time by 70% and steps from 11 to 4.</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wide">Next.js · FastAPI · Zilliz Cloud · PostgreSQL</p>
                 </div>
-                <!-- Briefing Helper -->
-                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition-all hover:shadow-xl">
-                    <div class="w-12 h-12 bg-brand-dark text-brand-blue rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                        <i class="fas fa-robot text-xl"></i>
+                <!-- AutoGrade -->
+                <div class="border-t border-stone-300 pt-6">
+                    <div class="flex items-baseline justify-between mb-3">
+                        <h3 class="text-xl font-serif font-bold text-ink">AutoGrade</h3>
+                        <span class="text-xs uppercase tracking-widest text-gold font-semibold">Nov 2025</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Briefing Helper</h3>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">Production RAG assistant at GoodCore. Implemented vector search and tool-calling to bridge natural language with internal databases.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">RAG</span>
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">FastAPI</span>
-                    </div>
-                </div>
-                <!-- Othello AI -->
-                <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-blue transition-all hover:shadow-xl">
-                    <div class="w-12 h-12 bg-brand-dark text-brand-blue rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                        <i class="fas fa-chess-knight text-xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Othello AI</h3>
-                    <p class="text-sm text-slate-600 mb-6 leading-relaxed">Algorithmic agent using Alpha-Beta pruning. Optimized for depth and real-time heuristics in competitive environments.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">Python</span>
-                        <span class="px-2 py-1 bg-white text-[10px] font-bold rounded border border-slate-200">Heuristics</span>
-                    </div>
+                    <p class="text-sm text-stone-600 leading-relaxed mb-4">Agentic grading system for short scientific answers, modeling assessment as semantic entailment. Benchmarked symbolic, transformer, and LLM-based approaches under low-resource settings.</p>
+                    <p class="text-xs text-stone-400 uppercase tracking-wide">NLP · Agentic AI · Evaluation</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact & Feedback (Restored) -->
-    <section class="py-24 bg-slate-50" id="impact">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-brand-dark mb-12">Leadership & Impact</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+    <!-- Leadership & Community -->
+    <section class="py-24 bg-white" id="impact">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="eyebrow mb-3 fade-in-up">Beyond the Code</p>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-ink mb-4 fade-in-up">Leadership & Community</h2>
+            <p class="text-stone-500 mb-14 max-w-2xl fade-in-up">Building and mentoring communities has been a constant thread alongside my technical work.</p>
 
-                <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-    
-                    <div>
-                        <div class="flex text-brand-blue mb-4 gap-1">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                
-                        <p class="text-slate-600 italic leading-relaxed">
-                            "Being guided by Mr. Sibtain Ahmed – a very enthusiastic and friendly Team Leader – helped me quickly integrate into the class right from the very first sessions. He not only provided detailed and clear instructions on how to complete assignments throughout the course but also always tried to bridge the gap between group members by regularly checking in on everyone's situation, sharing stories, and encouraging everyone to talk about their personal interests to find common ground. Thanks to that, the class atmosphere became warm, cheerful, and everyone could easily support one another. I am truly grateful for his dedication and hope to continue learning with him in the future."
-                        </p>
-                    </div>
-                
-                    <!-- Feedback Provider -->
-                    <div class="mt-8 flex items-center justify-between border-t pt-6">
-                
-                        <div class="flex items-center gap-4">
-                            <!-- Profile Image -->
-                            <img
-                                src="data/ThaoPhuong.png"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                                class="w-12 h-12 rounded-full object-cover"
-                                alt="Feedback Provider">
-                
-                            <!-- Fallback Initials -->
-                            <div class="w-12 h-12 rounded-full bg-brand-blue/10 hidden items-center justify-center font-bold text-brand-blue">
-                                TL
-                            </div>
-                
-                            <!-- Name & Role -->
+            <div class="grid md:grid-cols-2 gap-12 stagger-children">
+                <div class="border-t border-stone-300 pt-6">
+                    <i class="fas fa-quote-left text-gold/50 text-2xl mb-4"></i>
+                    <p class="text-stone-600 italic leading-relaxed text-[15px]">
+                        "Being guided by Mr. Sibtain Ahmed – a very enthusiastic and friendly Team Leader – helped me quickly integrate into the class right from the very first sessions. He not only provided detailed and clear instructions on how to complete assignments throughout the course but also always tried to bridge the gap between group members by regularly checking in on everyone's situation, sharing stories, and encouraging everyone to talk about their personal interests to find common ground."
+                    </p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="data/ThaoPhuong.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-10 h-10 rounded-full object-cover grayscale" alt="Feedback Provider">
+                            <div class="w-10 h-10 rounded-full bg-stone-200 hidden items-center justify-center font-bold text-stone-500 text-xs">TL</div>
                             <div>
-                                <p class="text-sm font-bold text-brand-dark">Thao Phuong Tran</p>
-                                <p class="text-xs text-slate-400">Stanford Code in Place · Student</p>
+                                <p class="text-sm font-semibold text-ink">Thao Phuong Tran</p>
+                                <p class="text-xs text-stone-400">Stanford Code in Place · Student</p>
                             </div>
                         </div>
-                
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/thao-phuong-tran-901820332/"
-                           target="_blank"
-                           class="text-slate-400 hover:text-brand-blue transition">
+                        <a href="https://www.linkedin.com/in/thao-phuong-tran-901820332/" target="_blank" class="text-stone-400 hover:text-gold transition-colors">
                             <i class="fab fa-linkedin text-lg"></i>
                         </a>
-                
                     </div>
                 </div>
-                
-                <div class="p-8 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
-    
-                    <div>
-                        <div class="flex text-brand-blue mb-4 gap-1">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                
-                        <p class="text-slate-600 italic leading-relaxed">
-                            "Sibtain's commitment as a co-founder for QubitCoders (Competitive Programming Community) was commendable for delivering webinars and organizing programming competitions for 300 students. His enthusiasm was grounded in selfless initiative to create awareness among peers and juniors to upskill and compete on national and international competitions."
-                        </p>
-                    </div>
-                
-                    <!-- Feedback Provider -->
-                    <div class="mt-8 flex items-center justify-between border-t pt-6">
-                
-                        <div class="flex items-center gap-4">
-                            <!-- Profile Image -->
-                            <img
-                                src="data/FaizanSheikh.jpeg"
-                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                                class="w-12 h-12 rounded-full object-cover"
-                                alt="Feedback Provider">
-                
-                            <!-- Fallback Initials -->
-                            <div class="w-12 h-12 rounded-full bg-brand-blue/10 hidden items-center justify-center font-bold text-brand-blue">
-                                TL
-                            </div>
-                
-                            <!-- Name & Role -->
+
+                <div class="border-t border-stone-300 pt-6">
+                    <i class="fas fa-quote-left text-gold/50 text-2xl mb-4"></i>
+                    <p class="text-stone-600 italic leading-relaxed text-[15px]">
+                        "Sibtain's commitment as a co-founder for QubitCoders (Competitive Programming Community) was commendable for delivering webinars and organizing programming competitions for 300 students. His enthusiasm was grounded in selfless initiative to create awareness among peers and juniors to upskill and compete on national and international competitions."
+                    </p>
+                    <div class="mt-6 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="data/FaizanSheikh.jpeg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-10 h-10 rounded-full object-cover grayscale" alt="Feedback Provider">
+                            <div class="w-10 h-10 rounded-full bg-stone-200 hidden items-center justify-center font-bold text-stone-500 text-xs">FS</div>
                             <div>
-                                <p class="text-sm font-bold text-brand-dark">Faizan Sheikh</p>
-                                <p class="text-xs text-slate-400">QubtiCoders · Co-founder</p>
+                                <p class="text-sm font-semibold text-ink">Faizan Sheikh</p>
+                                <p class="text-xs text-stone-400">QubtiCoders · Co-founder</p>
                             </div>
                         </div>
-                
-                        <!-- LinkedIn -->
-                        <a href="https://pk.linkedin.com/in/faizan-sheikh-0317621b9"
-                           target="_blank"
-                           class="text-slate-400 hover:text-brand-blue transition">
+                        <a href="https://pk.linkedin.com/in/faizan-sheikh-0317621b9" target="_blank" class="text-stone-400 hover:text-gold transition-colors">
                             <i class="fab fa-linkedin text-lg"></i>
                         </a>
-                
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="py-24 bg-brand-dark text-white relative" id="testimonials">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-black tracking-[0.2em] text-brand-blue uppercase mb-5">Impact & Feedback</h2>
-                <h3 class="text-3xl md:text-5xl font-serif font-bold">What People Say</h3>
-                <p class="text-slate-400 mt-6 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">Being a Teaching Assistant is about more than grading. It's about mentorship and supporting the next generation of engineers.</p>
+    <section class="py-24 bg-ink text-white" id="testimonials">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in-up">
+                <p class="eyebrow mb-3">Student Feedback</p>
+                <h3 class="text-3xl md:text-4xl font-serif font-bold text-stone-50">What People Say</h3>
+                <p class="text-stone-400 mt-5 max-w-2xl mx-auto text-sm leading-relaxed">Being a Teaching Assistant is about more than grading. It's about mentorship and supporting the next generation of engineers.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group">
-                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"Sibtain is absolutely the best TA I’ve ever had! He’s super helpful and supportive, both in class and outside of it. He really knows how to make things clear and easy to understand. Honestly, his teaching skills are off the charts. I'd give him a 100 out of 10!"</p>
-                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
-                        <div class="flex items-center gap-4 flex-1">
-                            <div class="relative w-12 h-12 flex-shrink-0">
-                                <img src="data/TuLinhPham.jpeg" alt="Alice L." onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
-                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">AL</div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h5 class="font-bold text-sm">Tu Linh Pham</h5>
-                                <p class="text-xs text-slate-500">Data Science Student</p>
-                                <p class="text-[12px] text-slate-400">Iowa State University</p>
+            <div class="grid md:grid-cols-3 gap-10 stagger-children">
+                <div class="border-t border-white/15 pt-6">
+                    <i class="fas fa-quote-left text-gold/60 text-xl mb-5"></i>
+                    <p class="text-stone-300 italic text-sm leading-relaxed mb-6">"Sibtain is absolutely the best TA I've ever had! He's super helpful and supportive, both in class and outside of it. He really knows how to make things clear and easy to understand."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="data/TuLinhPham.jpeg" alt="Tu Linh Pham" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-9 h-9 rounded-full object-cover grayscale">
+                            <div class="w-9 h-9 rounded-full bg-white/10 hidden items-center justify-center text-[10px] font-bold text-gold">TL</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-stone-100">Tu Linh Pham</h5>
+                                <p class="text-[11px] text-stone-500">Iowa State University</p>
                             </div>
                         </div>
-                        <a href="https://www.linkedin.com/in/tú-linh-phạm-131679389/" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
-                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        <a href="https://www.linkedin.com/in/tú-linh-phạm-131679389/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-gold transition-colors" title="View Profile">
+                            <i class="fas fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all transform md:-translate-y-6 group">
-                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"I had a really great experience with you as a TA in COMS 1270. You were always approachable, patient, and genuinely invested in helping students understand the material. Whether during labs or office hours, you took the time to explain concepts clearly and made sure everyone felt comfortable asking questions. Your support throughout the semester made a big difference in my learning, and I truly appreciated how available and encouraging you were."</p>
-                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
-                        <div class="flex items-center gap-4 flex-1">
-                            <div class="relative w-12 h-12 flex-shrink-0">
-                                <img src="data/sebastian.jpeg" alt="Sebastian Bjørnsti" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
-                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">SB</div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h5 class="font-bold text-sm">Sebastian Bjørnsti</h5>
-                                <p class="text-xs text-slate-500">CS Student</p>
-                                <p class="text-[12px] text-slate-400">Iowa State University</p>
+                <div class="border-t border-white/15 pt-6">
+                    <i class="fas fa-quote-left text-gold/60 text-xl mb-5"></i>
+                    <p class="text-stone-300 italic text-sm leading-relaxed mb-6">"I had a really great experience with you as a TA in COMS 1270. You were always approachable, patient, and genuinely invested in helping students understand the material."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="data/sebastian.jpeg" alt="Sebastian Bjørnsti" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-9 h-9 rounded-full object-cover grayscale">
+                            <div class="w-9 h-9 rounded-full bg-white/10 hidden items-center justify-center text-[10px] font-bold text-gold">SB</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-stone-100">Sebastian Bjørnsti</h5>
+                                <p class="text-[11px] text-stone-500">Iowa State University</p>
                             </div>
                         </div>
-                        <a href="https://www.linkedin.com/in/sebastian-bjornsti/" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
-                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        <a href="https://www.linkedin.com/in/sebastian-bjornsti/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-gold transition-colors" title="View Profile">
+                            <i class="fas fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
-                <!-- Card 3 -->
-                <div class="bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all group">
-                    <div class="text-amber-400 text-3xl mb-6 opacity-50 group-hover:opacity-100 transition-opacity"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-slate-300 italic mb-8 text-sm leading-relaxed">"Sibtain was my TA for a semester but the impact he left on me was great. He inspired me to follow his footsteps and apply to be a TA. His method of instruction is clear and concise, and he is always willing to break it down further for you. He is truly one of the nicest people and is incredibly hard working."</p>
-                    <div class="flex items-center justify-between pt-6 border-t border-white/5">
-                        <div class="flex items-center gap-4 flex-1">
-                            <div class="relative w-12 h-12 flex-shrink-0">
-                                <img src="data/gage.jpeg" alt="CS" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-full h-full rounded-full object-cover border-2 border-brand-blue/30">
-                                <div class="w-12 h-12 bg-brand-blue/20 rounded-full flex items-center justify-center text-[10px] font-black text-brand-blue hidden">CS</div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h5 class="font-bold text-sm mb-1">Gage Edwards</h5>
-                                <p class="text-xs text-slate-500">CS Student</p>
-                                <p class="text-[12px] text-slate-400">Iowa State University</p>
+
+                <div class="border-t border-white/15 pt-6">
+                    <i class="fas fa-quote-left text-gold/60 text-xl mb-5"></i>
+                    <p class="text-stone-300 italic text-sm leading-relaxed mb-6">"Sibtain was my TA for a semester but the impact he left on me was great. He inspired me to follow his footsteps and apply to be a TA. He is truly one of the nicest people and incredibly hard working."</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <img src="data/gage.jpeg" alt="Gage Edwards" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="w-9 h-9 rounded-full object-cover grayscale">
+                            <div class="w-9 h-9 rounded-full bg-white/10 hidden items-center justify-center text-[10px] font-bold text-gold">GE</div>
+                            <div>
+                                <h5 class="font-semibold text-sm text-stone-100">Gage Edwards</h5>
+                                <p class="text-[11px] text-stone-500">Iowa State University</p>
                             </div>
                         </div>
-                        <a href="https://www.instagram.com/gage_edwards06/" target="_blank" rel="noopener noreferrer" class="ml-3 w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-blue/20 flex items-center justify-center transition-all border border-white/10 hover:border-brand-blue/30 group/link" title="View Profile">
-                            <i class="fas fa-external-link-alt text-xs text-slate-400 group-hover/link:text-brand-blue transition-colors"></i>
+                        <a href="https://www.instagram.com/gage_edwards06/" target="_blank" rel="noopener noreferrer" class="text-stone-500 hover:text-gold transition-colors" title="View Profile">
+                            <i class="fas fa-arrow-up-right-from-square text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -683,264 +485,114 @@
         </div>
     </section>
 
-    <!-- Life Beyond Lab (Restored) -->
-    <section class=" bg-brand-dark text-white pt-6">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center border-t border-gray-700 py-24">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Beyond the Lab.</h2>
-                <p class="text-slate-400 mb-8 leading-relaxed">I measure my success by the breadth of my intellectual pursuits—whether it's running distance, mastering chess theory, or mentoring the next generation.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4"><i class="fas fa-puzzle-piece text-brand-blue"></i> <span>Harvard Puzzle Day: 9/9 Challenges Solved</span></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-graduation-cap text-brand-blue"></i> <span>Trained underprivileged students at iCodeGuru</span></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-running text-brand-blue"></i> <span>Amateur Long-distance Runner</span></div>
-                </div>
+    <!-- Beyond the Lab -->
+    <section class="py-24 bg-stone-100">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="fade-in-up">
+                <p class="eyebrow mb-3">Outside the Lab</p>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-ink mb-6">A Life of Curiosity.</h2>
+                <p class="text-stone-600 mb-8 leading-relaxed text-[15px]">Outside of research and engineering, I invest in community — mentoring students, competing in puzzles and programming contests, and building spaces for others to grow.</p>
+                <ul class="space-y-3 text-sm text-stone-700">
+                    <li class="flex items-start gap-3"><span class="text-gold">—</span> Harvard Puzzle Day 2025: 9/9 puzzles solved, ranked among top teams</li>
+                    <li class="flex items-start gap-3"><span class="text-gold">—</span> Section Leader, Stanford Code-in-Place 2025</li>
+                    <li class="flex items-start gap-3"><span class="text-gold">—</span> Co-founder, QubtiCoders — 100+ member coding community</li>
+                </ul>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 group hover:border-brand-blue transition-colors">
-                    <i class="fas fa-chess text-3xl mb-4 text-brand-blue"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Chess</p>
-                    <p class="text-sm mt-1">Game Theory</p>
+            <div class="grid grid-cols-2 gap-6 fade-in-up">
+                <div class="aspect-square border border-stone-300 flex flex-col items-center justify-center text-center px-4">
+                    <p class="font-serif text-3xl text-ink mb-2">9/9</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Harvard Puzzle Day</p>
                 </div>
-                <div class="aspect-square bg-white/5 rounded-3xl flex flex-col items-center justify-center border border-white/10 group hover:border-brand-blue transition-colors">
-                    <i class="fas fa-microphone-alt text-3xl mb-4 text-brand-blue"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Mentorship</p>
-                    <p class="text-sm mt-1">iCodeGuru Trainer</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY SNAPSHOTS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 md:px-6">
-             <div class="text-center mb-12">
-                <h3 class="text-2xl md:text-3xl font-serif font-bold text-brand-dark">Gallery</h3>
-                <p class="text-slate-500 mt-2 text-sm">Snapshots of events, travel, and campus life.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80 overflow-hidden relative rounded-3xl border border-slate-100">
-                <div class="bg-slate-100 flex items-center justify-center text-slate-300 hover:bg-slate-200 transition cursor-pointer"><i class="fas fa-camera text-2xl"></i></div>
-                <div class="bg-slate-200 flex items-center justify-center text-slate-300 hover:bg-slate-300 transition cursor-pointer md:col-span-2"><i class="fas fa-plane text-2xl"></i></div>
-                <div class="bg-slate-100 flex items-center justify-center text-slate-300 hover:bg-slate-200 transition cursor-pointer"><i class="fas fa-users text-2xl"></i></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent flex items-end justify-center pb-8">
-                    <span class="text-xs font-black text-brand-dark bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-xl border border-slate-200 uppercase tracking-widest">Coming Soon</span>
+                <div class="aspect-square border border-stone-300 flex flex-col items-center justify-center text-center px-4">
+                    <p class="font-serif text-xl text-ink mb-2">Section Leader</p>
+                    <p class="text-[10px] uppercase tracking-widest text-stone-500 font-semibold">Code-in-Place</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER / CONTACT -->
-    <footer class="bg-brand-dark text-white pt-24 pb-12" id="contact">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 text-center">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8">Let's Connect</h2>
-            <p class="text-slate-400 mb-12 max-w-lg mx-auto text-sm leading-relaxed fade-in">
-                I am currently open to Summer 2025 Internship opportunities in Software Engineering and Machine Learning Research.
+    <footer class="bg-ink text-white pt-24 pb-10" id="contact">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="eyebrow mb-4 fade-in">Get in Touch</p>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 fade-in">Let's Connect</h2>
+            <p class="text-stone-400 mb-12 max-w-lg mx-auto text-sm leading-relaxed fade-in">
+                Open to research collaborations, internships, and software engineering opportunities in AI/ML. Based in Ames, IA.
             </p>
-            
-            <div class="flex justify-center space-x-4 md:space-x-6 mb-10">
-                <a href="mailto:iamsibtainahmed@gmail.com" class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-blue transition-all border border-white/5 text-xl">
+
+            <div class="flex justify-center gap-4 mb-14">
+                <a href="mailto:iamsibtainahmed@gmail.com" class="w-12 h-12 border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-lg">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-[#0077b5] transition-all border border-white/5 text-xl">
+                <a href="https://linkedin.com/in/SibtainAhmed" target="_blank" class="w-12 h-12 border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-lg">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/SibtainAhmed" target="_blank" class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-black transition-all border border-white/5 text-xl">
+                <a href="https://github.com/SibtainAhmed" target="_blank" class="w-12 h-12 border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-lg">
                     <i class="fab fa-github"></i>
                 </a>
+                <a href="https://leetcode.com/u/sibtainahmed/" target="_blank" class="w-12 h-12 border border-white/15 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-lg">
+                    <i class="fas fa-code"></i>
+                </a>
             </div>
-            
-            <!-- <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold text-slate-600 uppercase tracking-widest">
-                <p>© 2025 Sibtain Ahmed. Built with Tailwind & Mathematical Intuition.</p>
-                <p>Designed for Impact.</p>
-            </div> -->
 
-            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-600 uppercase text-xs">
-                <p>© 2025 Sibtain Ahmed. Built with Tailwind & Mathematical Intuition.</p>
-                <p>Designed for Impact.</p>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-stone-500 uppercase text-[11px] tracking-widest">
+                <p>© 2026 Sibtain Ahmed. All rights reserved.</p>
+                <p>Ames, IA</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // TYPING EFFECT
-        const typingText = document.getElementById('typing-text');
-        const roles = ["Software Engineer", "AI Researcher", "Programming Mentor"];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-
-        // TYPING
-        // const typingText = document.getElementById('typing-text');
-        // const roles = ["Software Engineer", "AI Researcher", "Competitive Programmer", "Technical Mentor"];
-        let rIdx = 0, cIdx = 0, deleting = false;
-        function type() {
-            const role = roles[rIdx];
-            typingText.textContent = deleting ? role.substring(0, cIdx--) : role.substring(0, cIdx++);
-            if (!deleting && cIdx > role.length) { deleting = true; setTimeout(type, 2000); return; }
-            if (deleting && cIdx < 0) { deleting = false; rIdx = (rIdx + 1) % roles.length; cIdx = 0; }
-            setTimeout(type, deleting ? 50 : 100);
-        }
-        type();
-
-        function typeEffect() {
-            const currentRole = roles[roleIndex];
-            if (isDeleting) {
-                typingText.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let speed = isDeleting ? 60 : 150;
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                isDeleting = true;
-                speed = 2000; // Pause at end
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                speed = 500;
-            }
-
-            setTimeout(typeEffect, speed);
-        }
-
-        // BACKGROUND ANIMATION (Improved visibility)
-        const canvas = document.getElementById('canvas-bg');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function init() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            particles = [];
-            for (let i = 0; i < 90; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.4,
-                    vy: (Math.random() - 0.5) * 0.4,
-                    size: Math.random() * 2 + 1
-                });
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(59, 130, 246, 0.8)';
-            ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
-            
-            particles.forEach((p, i) => {
-                p.x += p.vx;
-                p.y += p.vy;
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-                    if (dist < 180) {
-                        ctx.lineWidth = 1 - (dist / 180);
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            });
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('resize', init);
-        
-        // INITIALIZE
-        init();
-        animate();
-        // typeEffect();
-
-        
-
         // RADAR CHART
         const radarCtx = document.getElementById('skillsRadar').getContext('2d');
         new Chart(radarCtx, {
             type: 'radar',
             data: {
-                labels: ['System Design', 'Algorithmic DSA', 'LLM RAG', 'Backend Scale', 'Research Lab', 'Mentorship'],
+                labels: ['RLHF / LLM Research', 'Algorithmic DSA', 'RAG & LLM Orchestration', 'Backend & Cloud', 'Full-Stack Dev', 'Teaching & Mentorship'],
                 datasets: [{
                     label: 'Sibtain Profile',
-                    data: [94, 96, 95, 92, 89, 95],
-                    backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                    borderColor: '#3b82f6',
-                    pointBackgroundColor: '#020617',
-                    borderWidth: 3
+                    data: [92, 90, 95, 92, 88, 94],
+                    backgroundColor: 'rgba(169, 129, 74, 0.15)',
+                    borderColor: '#a9814a',
+                    pointBackgroundColor: '#17150f',
+                    pointBorderColor: '#a9814a',
+                    borderWidth: 2
                 }]
             },
             options: {
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        angleLines: { color: 'rgba(23,21,15,0.08)' },
+                        grid: { color: 'rgba(23,21,15,0.08)' },
                         ticks: { display: false },
                         suggestedMin: 0,
                         suggestedMax: 100,
-                        pointLabels: { font: { weight: '800', family: 'Inter', size: 13 } }
+                        pointLabels: { font: { family: 'Inter', size: 12, weight: '600' }, color: '#44403c' }
                     }
                 },
                 plugins: { legend: { display: false } }
             }
         });
 
-        // AUTO-DETECT LINKEDIN/GITHUB ICONS IN TESTIMONIALS
-        document.querySelectorAll('#testimonials a[href]').forEach(link => {
-            const href = link.getAttribute('href');
-            if (!href || href === '#') return;
-            
-            const icon = link.querySelector('i');
-            if (!icon) return;
-            
-            if (href.includes('linkedin.com')) {
-                icon.className = 'fab fa-linkedin-in text-xs text-slate-400 group-hover/link:text-[#0077b5] transition-colors';
-                link.setAttribute('title', 'View LinkedIn Profile');
-            } else if (href.includes('github.com')) {
-                icon.className = 'fab fa-github text-xs text-slate-400 group-hover/link:text-white transition-colors';
-                link.setAttribute('title', 'View GitHub Profile');
-            }
-        });
-
-        // SCROLL ANIMATIONS
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
+        // SCROLL ANIMATIONS (subtle fade-ins only)
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Once animated, we can unobserve to improve performance
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        // Initialize scroll animations
         function initScrollAnimations() {
-            const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .stagger-children');
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.fade-in-up, .fade-in, .stagger-children').forEach(el => observer.observe(el));
         }
 
-        // Run when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initScrollAnimations);
         } else {
-            // DOM is already ready
             initScrollAnimations();
         }
     </script>
